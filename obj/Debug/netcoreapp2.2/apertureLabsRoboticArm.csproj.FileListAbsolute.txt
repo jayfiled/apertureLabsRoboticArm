@@ -1,0 +1,11 @@
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\apertureLabsRoboticArm.deps.json
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\apertureLabsRoboticArm.runtimeconfig.json
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\apertureLabsRoboticArm.runtimeconfig.dev.json
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\apertureLabsRoboticArm.dll
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\apertureLabsRoboticArm.pdb
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.csprojAssemblyReference.cache
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.csproj.CoreCompileInputs.cache
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.AssemblyInfoInputs.cache
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.AssemblyInfo.cs
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.dll
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.pdb
