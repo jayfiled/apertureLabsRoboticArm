@@ -1,7 +1,9 @@
 ## Write software to automate the pipetting process in an aperture laboratory
 
+- [ ] 🔥 **Add a TOC here**
+
 ## Setup instructions:
-First, make sure dotnet is installed 👇
+1. Make sure dotnet is installed 👇
 
 
 - Windows: [Install dotnet core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
@@ -10,7 +12,7 @@ First, make sure dotnet is installed 👇
 
 - MacOSX [Install dotnet core 2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-macos-x64-installer)
 
-Then clone the source from GitHub:
+2. Open up git bash, cmd or powershell then follow these steps to clone the source from GitHub to a folder on your computer.
 
 - `cd ~/`
 - `mkdir toy-robot-tech-test-joel-james`
@@ -18,32 +20,82 @@ Then clone the source from GitHub:
 - `git clone git@github.com:jayfiled/apertureLabsRoboticArm.git`
 - `cd apertureLabsRoboticArm`
 
-### Project To-do
-- [] **Set up project**
-- [] **Git and Github**
-- [] **Readme**
-- [] **Plan out project**
-- [] **Set up APP folders and classes**
-    - [] **TDD** 👇
-        - [] **program.cs to init router**
-        - [] **Router class**
-- [] **Model**
-    - [] **TDD** 👇
-        - [] **Test Tube class**
-- [] **Application Controllers**
-    - [] **TDD** 👇
-        - [] **plate class**
-        - [] **robot arm**
-- [] **View**
-    - [] **TDD** 👇
-        - [] **LcdDisplay**
+3. To run the program ⏩
 
-## Challenges:
-- Mapping my knowledge of Ruby to C#
-    Mosh Hamedani on Udemy, traversy media and angelSix on youtube helped out here.
-- Not much exp with testing, let alone in C#.
-    Always wanted to make time for TDD as it allows me to understand what I am actually doing better.
-- Setting up .net workspace on windows. Not challenging, just an extra thing I hadn't done that took time.
+4. Program operator manual 
+
+4. To run the tests 🧪
+
+
+### 📚 Description
+- The application is a simulation of a laboratory pipetting robot arm moving above a square plate of 25 wells, of dimensions 5 units x 5 units.
+- The robot is free to roam above the surface of the plate, but must be prevented from moving beyond the boundaries of the plate. Any movement that would result in the robot arm overshooting the plate must be prevented, however further valid movement commands must still be allowed.
+- Assume that the robot has been primed with enough solution to pipette.
+
+- Create an application that can read in commands of the following form -
+    `PLACE X,Y`
+    `DETECT`
+    `DROP`
+    `MOVE N, S, E or W`
+    `REPORT`
+
+- PLACE will place the robot above the plate in position X,Y.
+- The origin (0,0) can be considered to be the SOUTH WEST most corner.
+- The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a valid PLACE command has been executed.
+- MOVE will move the toy robot one well in the direction specified by the command.
+- DETECT will sense whether the well directly below is FULL, EMPTY or ERR (if the robot cannot detect the plate)
+- DROP place a drop of liquid into the well directly below the robot
+- REPORT will announce the X,Y,FULL/EMPTY (the status of the detection of the well below) of the robot arm. This can be in any form, but standard output is sufficient.
+
+- A robot that is not over the plate can choose the ignore the MOVE and REPORT commands.
+- **Input can be from a file, or from standard input, as the developer chooses.**
+- Provide test data to exercise the application. Test data should include priming the plate with wells that are EMPTY or FULL.
+
+Constraints:
+The **toy** robot must not overshoot the table during movement. This also includes the initial placement of the toy robot.
+Any move that would cause the robot to fall must be ignored.
+
+Example Input and Output:
+a)
+PLACE 0,0
+MOVE N
+REPORT
+Output: 1,0,EMPTY
+
+b)
+PLACE 0,0
+MOVE E
+REPORT
+Output: 0,1,FULL
+
+c)
+PLACE 1,2
+MOVE N
+MOVE E
+REPORT
+Output: 2,3,EMPTY
+
+
+### Project To-do
+- [ ] **Set up project**
+- [ ] **Git and Github**
+- [ ] **Readme**
+- [ ] **Plan out project**
+- [ ] **Set up APP folders and classes**
+    - [ ] **TDD** 👇
+        - [ ] **program.cs to init router**
+        - [ ] **Router class**
+- [ ] **Model**
+    - [ ] **TDD** 👇
+        - [ ] **Test Tube class**
+- [ ] **Application Controllers**
+    - [ ] **TDD** 👇
+        - [ ] **plate class**
+        - [ ] **robot arm**
+- [ ] **View**
+    - [ ] **TDD** 👇
+        - [ ] **LcdDisplay**
+
     
 ### Class breakdown
 
@@ -79,3 +131,14 @@ Reports any output or errors to the person controlling the robot.
 'starts' the interface to the robot arm and initializes all the classes and passes them to the router to start interaction with the person controlling the robot arm
 
 ### Router
+
+## Design Considerations
+- VS vs Visual Studio code. Felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
+- "MVC" vs a mini class library - went with "MVC" but felt forced.
+
+## Challenges:
+- Mapping my knowledge of Ruby to C#
+    Mosh Hamedani on Udemy, traversy media and angelSix on youtube helped out here.
+- Not much exp with testing, let alone in C#.
+    Always wanted to make time for TDD as it allows me to understand what I am actually doing better.
+- Setting up .net workspace on windows. Not challenging, just an extra thing I hadn't done that took time.
