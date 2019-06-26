@@ -9,3 +9,6 @@ C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2
 C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.AssemblyInfo.cs
 C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.dll
 C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\obj\Debug\netcoreapp2.2\apertureLabsRoboticArm.pdb
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
+C:\Users\joelj\Documents\git\dotnet\apertureLabsRoboticArm\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll

@@ -21,10 +21,13 @@
 - `cd apertureLabsRoboticArm`
 
 3. To run the program ⏩
+- `nuget install packages.config`
+- `dotnet run`
 
 4. Program operator manual 
 
 4. To run the tests 🧪
+- Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
 
 
 ### 📚 Description
@@ -142,3 +145,4 @@ Reports any output or errors to the person controlling the robot.
 - Not much exp with testing, let alone in C#.
     Always wanted to make time for TDD as it allows me to understand what I am actually doing better.
 - Setting up .net workspace on windows. Not challenging, just an extra thing I hadn't done that took time.
+    - NuGet package manager
