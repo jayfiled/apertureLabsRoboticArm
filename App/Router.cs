@@ -5,18 +5,16 @@ namespace apertureLabsRoboticArm
     class Router
     {
         // Set instance variables
-        public bool running = true;
+        bool running = true;
         RobotArm RoboArm = new RobotArm();
         public void Run()
         {
             while (running == true);
             {
-            Console.Write(PrintWelcomeMessage());
-                // Create a run function that:
-                    // shows the operator a list of commands they can do
-                    // Save the chosen number to a variable
-                    // Run the chosen number over a switch case
-                    // That runs a method on the Robot arm instance
+            Console.WriteLine(PrintWelcomeMessage());
+            DisplayMenu();
+            string MenuChoice = Console.ReadLine();
+            RouteAction(MenuChoice);
             }
             PrintFarewellMessage();
         }
@@ -30,26 +28,26 @@ namespace apertureLabsRoboticArm
             "EXIT operation of Robotic Arm"
         };
 
-          private void RouteAction(action)
+          private void RouteAction(string MenuChoice)
           {
-            switch (action)
+            switch (MenuChoice)
             {
-                case 1:
-                    RoboArm.place;
+                case "1":
+                    RoboArm.Place();
                     break;
-                case 2:
-                    RoboArm.detect;
+                case "2":
+                    RoboArm.Detect();
                     break;
-                case 3:
-                    RoboArm.drop;
+                case "3":
+                    RoboArm.Drop();
                     break;
-                case 4:
-                    RoboArm.move;
+                case "4":
+                    RoboArm.Move();
                     break;
-                case 5:
-                    RoboArm.report;
+                case "5":
+                    RoboArm.Report();
                     break;
-                case 6:
+                case "6":
                     stop();
                     break;
                 default:
@@ -58,10 +56,14 @@ namespace apertureLabsRoboticArm
             }
           }
         
-        private void DisplayMenu() 
+		private void DisplayMenu() 
         {
-            // Loop over and print out all the actions, with 
-            // the operator presses 1, 2 or 3 etc to choose.
+            for (int i = 0; i < actions.Length; i++)
+            {
+                string action = actions[i];
+                Console.WriteLine("{0}: {1}",i+1, action);
+                Console.WriteLine("=>");
+            }
         }
 
         private void stop() 

@@ -3,14 +3,11 @@
 - [ ] 🔥 **Add a TOC here**
 
 ## Setup instructions:
-1. Make sure dotnet is installed 👇
+1. Make sure dotnet 👇
 
+- For [Windows](https://dotnet.microsoft.com/download/dotnet-core/2.2), [Linux](https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-2.2.300) or [MacOSX](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-macos-x64-installer)
 
-- Windows: [Install dotnet core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-
-- Linux: [Install dotnet core 2.2](https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-2.2.300)
-
-- MacOSX [Install dotnet core 2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-macos-x64-installer)
+.. and git ([for Windows](https://git-scm.com/download/win)) or [Linux/OSX](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed
 
 2. Open up git bash, cmd or powershell then follow these steps to clone the source from GitHub to a folder on your computer.
 
@@ -21,10 +18,9 @@
 - `cd apertureLabsRoboticArm`
 
 3. To run the program ⏩
-- `nuget install packages.config`
 - `dotnet run`
 
-4. Program operator manual 
+4. Program operator manual:
 
 4. To run the tests 🧪
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)

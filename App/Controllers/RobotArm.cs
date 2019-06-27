@@ -8,25 +8,42 @@ namespace apertureLabsRoboticArm
 
     // Each method will ask the view for input if necessary
 
-        // Method for place
+        public void Place()
+        {
             // Creates the plate obj
             // Checks the boundaries
+            Console.WriteLine("Hi from the place method!");
+        }
 
-        // Method for Detect
+        public void Detect()
+        {
             // Checks for existence of plate obj
             // Checks the boundaries
+            Console.WriteLine("Hi from the detect method!");
+        }
 
-        // Method for Drop
+        public void Drop()
+        {
             // Checks for existence of plate obj
             // Checks the boundaries
+            Console.WriteLine("Hi from the drop method!");
+            
+        }
 
-        // Method for Move n s e w
+        public void Move()
+        {
             // Checks for existence of plate obj
             // Checks the boundaries
+            Console.WriteLine("Hi from the move method!");
+        }
 
-        // Method for report
+        public void Report()
+        {
             // Checks for existence of plate obj
             // Checks the boundaries
+            Console.WriteLine("Hi from the report method!");
+
+        }
 
         // Method to check the existence of plate Obj
         
