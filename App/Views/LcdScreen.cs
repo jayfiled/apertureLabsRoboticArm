@@ -4,13 +4,19 @@ namespace apertureLabsRoboticArm
 {
     class LcdScreen
     {
-        public void Place()
+        public int[] Place()
         {
+            // Create an array to return to the controller as the X and Y Axis co-ords
+            int[] positionXY = new int[2];
+
+            // Get inputs, convert to integer and push to array
             Console.WriteLine("Which position from 0 - 4 on the x-axis would you like to start?");
-            String xAxisStart = Console.ReadLine();
+            int xAxisStart = System.Convert.ToInt32(Console.ReadLine());
+            positionXY[0] = xAxisStart;
             Console.WriteLine("Which position from 0 - 4 on the y-axis would you like to start?");
-            String yAxisStart = Console.ReadLine();
-            return String[] positionXY = {xAxisStart, yAxisStart}
+            int yAxisStart = System.Convert.ToInt32(Console.ReadLine());
+            positionXY[1] = yAxisStart;
+            return positionXY;
         }
     }
 }
