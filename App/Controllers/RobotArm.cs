@@ -6,11 +6,15 @@ namespace apertureLabsRoboticArm
     {
     // Instance variables for current position [0,0]
 
+    // Instantiate the testTubePlate
+
+    // Instantiate the view
+
     // Each method will ask the view for input if necessary
 
         public void Place()
         {
-            // Creates the plate obj
+            // Sets the place object's 'set up?' instance variable to true
             // Checks the boundaries
             Console.WriteLine("Hi from the place method!");
         }

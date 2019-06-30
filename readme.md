@@ -24,6 +24,7 @@
 
 4. To run the tests 🧪
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
+- Then from powershell or cmd run `dotnet test`
 
 
 ### 📚 Description
@@ -76,14 +77,14 @@ Output: 2,3,EMPTY
 
 
 ### Project To-do
-- [ ] **Set up project**
-- [ ] **Git and Github**
+- [x] **Set up project**
+- [x] **Git and Github**
 - [ ] **Readme**
-- [ ] **Plan out project**
-- [ ] **Set up APP folders and classes**
+- [x] **Plan out project**
+- [x] **Set up APP folders and classes**
     - [ ] **TDD** 👇
-        - [ ] **program.cs to init router**
-        - [ ] **Router class**
+        - [x] **program.cs to init router**
+        - [x] **Router class**
 - [ ] **Model**
     - [ ] **TDD** 👇
         - [ ] **Test Tube class**

@@ -5,18 +5,18 @@ namespace apertureLabsRoboticArm
     class Router
     {
         // Set instance variables
-        bool running = true;
+        public bool running = true;
         RobotArm RoboArm = new RobotArm();
         public void Run()
         {
-            while (running == true);
+            while (running == true)
             {
             Console.WriteLine(PrintWelcomeMessage());
             DisplayMenu();
             string MenuChoice = Console.ReadLine();
             RouteAction(MenuChoice);
             }
-            PrintFarewellMessage();
+            Console.WriteLine(PrintFarewellMessage());
         }
 
         String[] actions = {
