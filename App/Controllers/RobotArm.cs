@@ -4,11 +4,15 @@ namespace apertureLabsRoboticArm
 {
     class RobotArm
     {
-    // Instance variables for current position [0,0]
+    // Instance variable for current position (x, y)
+        public int[] currentPosition = { 0, 0 };
+
 
     // Instantiate the testTubePlate
 
     // Instantiate the view
+        LcdScreen LcdScreen = new LcdScreen();
+
 
     // Each method will ask the view for input if necessary
 
@@ -16,7 +20,12 @@ namespace apertureLabsRoboticArm
         {
             // Sets the place object's 'set up?' instance variable to true
             // Checks the boundaries
-            Console.WriteLine("Hi from the place method!");
+
+            // Get input from User about where to place the robot arm and save it to the
+            // robot arm's current position
+            int[] moveTo = LcdScreen.Place();
+            currentPosition[0] = moveTo[0];
+            currentPosition[1] = moveTo[1];
         }
 
         public void Detect()
