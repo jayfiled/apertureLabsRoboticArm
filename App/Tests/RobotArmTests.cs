@@ -1,18 +1,27 @@
 using System;
 using NUnit.Framework;
 
+// Test function naming conventions:
+// TheMethodOnTheTest_TheTestScenario
+// Expected behavior, i.e.
+// CanBeCancelledBy_SameUserCancellingReservation_ReturnTrue()
+
 namespace apertureLabsRoboticArm
 {
     [TestFixture]
 
     class RobotArmTests
     {
+        // Arrange
+        RobotArm r = new RobotArm();
+
         [TestCase()]
         public void RobotArmObjectShouldInstantiateTheView()
         {
-
+            // Assert
+            Assert.IsNotNull(r.LcdScreen);
         }
-        
+
         [TestCase()]
         public void FunctionsRunBeforePlaceShouldFail()
         {

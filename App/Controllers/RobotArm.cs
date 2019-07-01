@@ -11,14 +11,14 @@ namespace apertureLabsRoboticArm
     // Instantiate the testTubePlate
 
     // Instantiate the view
-        LcdScreen LcdScreen = new LcdScreen();
+        public LcdScreen LcdScreen = new LcdScreen();
 
 
     // Each method will ask the view for input if necessary
 
         public void Place()
         {
-            // Sets the place object's 'set up?' instance variable to true
+            // Sets the plate object's 'set up?' instance variable to true
             // Checks the boundaries
 
             // Get input from User about where to place the robot arm and save it to the
