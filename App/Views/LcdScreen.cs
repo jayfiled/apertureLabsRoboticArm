@@ -18,5 +18,10 @@ namespace apertureLabsRoboticArm
             positionXY[1] = yAxisStart;
             return positionXY;
         }
+
+        public void PlateIsntReady()
+        {
+            Console.WriteLine("The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.");
+        }
     }
 }

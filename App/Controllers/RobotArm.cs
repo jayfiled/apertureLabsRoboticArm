@@ -9,6 +9,8 @@ namespace apertureLabsRoboticArm
 
 
     // Instantiate the testTubePlate
+        public TestTubePlate plate = new TestTubePlate();
+
 
     // Instantiate the view
         public LcdScreen LcdScreen = new LcdScreen();
@@ -18,7 +20,8 @@ namespace apertureLabsRoboticArm
 
         public void Place()
         {
-            // Sets the plate object's 'set up?' instance variable to true
+            // Sets the plate object's 'readyForOperation' instance variable to true
+            plate.readyForOperation = true;
             // Checks the boundaries
 
             // Get input from User about where to place the robot arm and save it to the
@@ -30,35 +33,102 @@ namespace apertureLabsRoboticArm
 
         public void Detect()
         {
-            // Checks for existence of plate obj
-            // Checks the boundaries
-            Console.WriteLine("Hi from the detect method!");
+            // Checks if the plate is ready for operation
+            if (IsPlateIsReady())
+            {
+                // Checks the boundaries
+                // if (isWithinGrid)
+                //{
+                    // Do the detect method
+                //}
+                //else
+                //{
+                    // Ask LCD screen to say it isn't within the grid
+                //}
+            }
+            else
+            {
+                LcdScreen.PlateIsntReady();
+            }    
         }
 
         public void Drop()
         {
-            // Checks for existence of plate obj
-            // Checks the boundaries
-            Console.WriteLine("Hi from the drop method!");
-            
+            // Checks if the plate is ready for operation
+            if (IsPlateIsReady())
+            {
+                // Checks the boundaries
+                // if (isWithinGrid)
+                //{
+                    // Do the drop method
+                //}
+                //else
+                //{
+                    // Ask LCD screen to say it isn't within the grid
+                //}
+            }
+            else
+            {
+                LcdScreen.PlateIsntReady();
+            }    
         }
 
         public void Move()
         {
-            // Checks for existence of plate obj
-            // Checks the boundaries
-            Console.WriteLine("Hi from the move method!");
+            // Checks if the plate is ready for operation
+            if (IsPlateIsReady())
+            {
+                // Checks the boundaries
+                // if (isWithinGrid)
+                //{
+                    // Do the move method
+                //}
+                //else
+                //{
+                    // Ask LCD screen to say it isn't within the grid
+                //}
+            }
+            else
+            {
+                LcdScreen.PlateIsntReady();
+            } 
         }
 
         public void Report()
         {
-            // Checks for existence of plate obj
-            // Checks the boundaries
-            Console.WriteLine("Hi from the report method!");
+            // Checks if the plate is ready for operation
+            if (IsPlateIsReady())
+            {
+                // Checks the boundaries
+                // if (isWithinGrid)
+                //{
+                    // Do the detect method
+                //}
+                //else
+                //{
+                    // Ask LCD screen to say it isn't within the grid
+                //}
+            }
+            else
+            {
+                LcdScreen.PlateIsntReady();
+            } 
 
         }
 
-        // Method to check the existence of plate Obj
+        // Method to check the state of the readyForOperation var in TestTubePlate
+
+        public bool IsPlateIsReady()
+        {
+            if (plate.readyForOperation == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         
         // Method to check the boundaries
     }
