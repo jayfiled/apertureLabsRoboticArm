@@ -95,7 +95,11 @@ Output: 2,3,EMPTY
 - [ ] **View**
     - [ ] **TDD** 👇
         - [ ] **LcdDisplay**
+- [ ] **Clean-up**
+    - [ ] **Move check for plate ready and grid in own function**
+    - [ ] **Rename test functions to convention**
 
+        
     
 ### Class breakdown
 

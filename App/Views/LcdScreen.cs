@@ -21,7 +21,8 @@ namespace apertureLabsRoboticArm
 
         public void PlateIsntReady()
         {
-            Console.WriteLine("The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.");
+            String notReady = "The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.";
+            Console.WriteLine(notReady);
         }
     }
 }
