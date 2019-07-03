@@ -38,15 +38,8 @@ namespace apertureLabsRoboticArm
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
             {
-                // Checks the boundaries
-                // if (isWithinGrid)
-                //{
-                    // Do the detect method
-                //}
-                //else
-                //{
-                    // Ask LCD screen to say it isn't within the grid
-                //}
+                // Check y first, then check the X'th element of it
+                // if it's a 1 then it's full, if not it's empty.
             }
             else
             {

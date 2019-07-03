@@ -13,37 +13,37 @@ namespace apertureLabsRoboticArm
             // Get inputs, convert to integer and push to array
             // while loops to stop and provide feedback if the input is outside the 
             // test tube plate's boundaries.
-            while (continueWhileTrue)
+            do
             {
                 Console.WriteLine("Which position from 0 - 4 on the x-axis would you like to start?");
                 int xAxisStart = System.Convert.ToInt32(Console.ReadLine());
                 if (PlacePostitionWithinPlateBoundary(xAxisStart))
                 {
-                    continueWhileTrue = true;            
+                    continueWhileTrue = false;            
                     positionXY[0] = xAxisStart;
                 }
                 else
                 {
-                    continueWhileTrue = false;
+                    continueWhileTrue = true;
                 }
-            }
+            } while (continueWhileTrue);
             // stuck here ... doesn't a while loop check it's condition at the 
             // end to see if it should run again?
 
-            while (continueWhileTrue)
+            do
             {
                 Console.WriteLine("Which position from 0 - 4 on the y-axis would you like to start?");
                 int yAxisStart = System.Convert.ToInt32(Console.ReadLine());
                 if (PlacePostitionWithinPlateBoundary(yAxisStart))
                     {
-                        continueWhileTrue = true;
+                        continueWhileTrue = false;
                         positionXY[1] = yAxisStart;
                     }
                     else
                     {
-                        continueWhileTrue = false;
+                        continueWhileTrue = true;
                     }
-            }
+            } while (continueWhileTrue);
             return positionXY;
         }
 
@@ -53,6 +53,7 @@ namespace apertureLabsRoboticArm
             Console.WriteLine(notReady);
         }
 
+        // Needs error handling for non-ints
         public bool PlacePostitionWithinPlateBoundary(int positionXorY)
         {
             if (positionXorY >= 0 && positionXorY <= 4)
@@ -72,7 +73,23 @@ namespace apertureLabsRoboticArm
         }
         public void ShowCurrentPosition(int[] currentPosition)
         {
-            Console.WriteLine("{0}, {1}", currentPosition[0], currentPosition[1]);
+            Console.WriteLine("You are now at position X: {0}, Y: {1}", currentPosition[0], currentPosition[1]);
+        }
+
+        public void ShowTestTubeFullStatus(int input)
+        {
+            if (input == 1)
+            {
+                Console.WriteLine("It's full");
+            }
+            if (input == 0)
+            {
+                Console.WriteLine("It's empty");
+            }
+            else
+            {
+                Console.WriteLine("ERR");
+            }
         }
     }
 }
