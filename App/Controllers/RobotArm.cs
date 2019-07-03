@@ -131,5 +131,17 @@ namespace apertureLabsRoboticArm
         }
         
         // Method to check the boundaries
+
+        public bool IsWithinGrid(int positionXorY)
+        {
+            if (positionXorY >= 0 && positionXorY <= 4)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

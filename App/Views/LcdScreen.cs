@@ -24,5 +24,14 @@ namespace apertureLabsRoboticArm
             String notReady = "The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.";
             Console.WriteLine(notReady);
         }
+
+        public void SelectionNotWithinPlateBoundary()
+        {
+            Console.WriteLine(
+                @"I'm sorry, that isn't within the boundaries
+                of the test tube grid - please choose a number
+                between 0 and 4."
+                 );
+        }
     }
 }

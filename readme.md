@@ -24,7 +24,7 @@
 
 4. To run the tests 🧪
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
-- Then from powershell or cmd run `dotnet test`
+- Then from powershell or cmd run `dotnet test -v:n` wait for the logging output then scroll to the bottom for the test results.
 
 
 ### 📚 Description
@@ -98,6 +98,12 @@ Output: 2,3,EMPTY
 - [ ] **Clean-up**
     - [ ] **Move check for plate ready and grid in own function**
     - [ ] **Rename test functions to convention**
+    - [ ] **Clean up if else with ternary operators, or C# equivalent**
+    - [ ] **Check to see if C# has implied 'else'**
+- [ ] **Improvement**
+    - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
+    - [ ] **The test tubes can be filled randomly**
+
 
         
     
