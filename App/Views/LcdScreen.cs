@@ -12,7 +12,7 @@ namespace apertureLabsRoboticArm
 
             // Get inputs, convert to integer and push to array
             // while loops to stop and provide feedback if the input is outside the 
-            // test tube plat's boundaries.
+            // test tube plate's boundaries.
             while (continueWhileTrue)
             {
                 Console.WriteLine("Which position from 0 - 4 on the x-axis would you like to start?");
@@ -29,7 +29,7 @@ namespace apertureLabsRoboticArm
             }
             // stuck here ... doesn't a while loop check it's condition at the 
             // end to see if it should run again?
-            
+
             while (continueWhileTrue)
             {
                 Console.WriteLine("Which position from 0 - 4 on the y-axis would you like to start?");
@@ -70,5 +70,9 @@ namespace apertureLabsRoboticArm
                  return false;
             }
         }
+        public void ShowCurrentPosition(int[] currentPosition)
+        {
+            Console.WriteLine("{0}, {1}", currentPosition[0], currentPosition[1]);
         }
+    }
 }

@@ -29,6 +29,8 @@ namespace apertureLabsRoboticArm
             int[] moveTo = LcdScreen.Place();
             currentPosition[0] = moveTo[0];
             currentPosition[1] = moveTo[1];
+    
+            LcdScreen.ShowCurrentPosition(currentPosition);
         }
 
         public void Detect()
