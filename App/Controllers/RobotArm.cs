@@ -74,15 +74,60 @@ namespace apertureLabsRoboticArm
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
             {
-                // Checks the boundaries
-                // if (isWithinGrid)
-                //{
-                    // Do the move method
-                //}
-                //else
-                //{
-                    // Ask LCD screen to say it isn't within the grid
-                //}
+                Console.WriteLine("Which directions would you like to move in?");
+                Console.WriteLine("Press 'N' to move North (up), 'S' to move South (down), 'E' to move East (right) and 'W' for West (left)");
+                String direction = Console.ReadLine().ToUpper();
+                switch (direction)
+            {
+                case "N":
+                    if (IsWithinGrid((currentPosition[1] + 1)))
+                    {
+                        currentPosition[1] += 1;
+                    } 
+                    else
+                    {
+                        Console.WriteLine("You are at the edge already, please use S, E or W");
+                    }
+                    LcdScreen.ShowCurrentPosition(currentPosition);
+                    break;
+                case "S":
+                    if (IsWithinGrid((currentPosition[1] - 1)))
+                    {
+                        currentPosition[1] -= 1;
+                    } 
+                    else
+                    {
+                        Console.WriteLine("You are at the edge already, please use N, E or W");
+                    }
+                    LcdScreen.ShowCurrentPosition(currentPosition);
+                    break;
+                case "E":
+                    if (IsWithinGrid((currentPosition[0] + 1)))
+                    {
+                        currentPosition[0] += 1;
+                    } 
+                    else
+                    {
+                        Console.WriteLine("You are at the edge already, please use N, S or W");
+                    }
+                    LcdScreen.ShowCurrentPosition(currentPosition);
+                    break;
+                case "W":
+                    if (IsWithinGrid((currentPosition[0] - 1)))
+                    {
+                        currentPosition[0] -= 1;
+                    } 
+                    else
+                    {
+                        Console.WriteLine("You are at the edge already, please use N, S or E");
+                    }
+                    LcdScreen.ShowCurrentPosition(currentPosition);
+                    break;
+                default:
+                    Console.WriteLine("Please choose the letters N, S, E or W");
+                    break;
+            }
+
             }
             else
             {

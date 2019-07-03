@@ -103,6 +103,9 @@ Output: 2,3,EMPTY
 - [ ] **Improvement**
     - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
     - [ ] **The test tubes can be filled randomly**
+    - [ ] **Add a do/while loop to the move method so that the user can quickly navigate around the test tube plate**
+
+
 
 
         
@@ -155,3 +158,6 @@ Reports any output or errors to the person controlling the robot.
     - NuGet package manager
     - Getting more descriptive test results
 - Struggled to think about which Class should hold the method to check the boundaries of the test tube plate. As it's the view that is getting the place position from the user, I'd have to make new instance of the robot arm to use that function. A static method on the robot arm would probably be ideal, but I have no internet and I get a error message that the function is inaccessible.
+- Syntax frustrations:
+    - "methods" / "functions" are being used interchangeably in all the videos / articles I've read. Not sure which to use.
+    - Don't know the concrete naming conventions for Method Names, Variables, instance variables etc.
