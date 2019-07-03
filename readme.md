@@ -109,6 +109,7 @@ Reports any output or errors to the person controlling the robot.
 ### Design Considerations
 - VS vs Visual Studio code. Felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
 - "MVC" vs a mini class library - went with "MVC" but felt forced.
+- While the tests were a great way of planning out my project, I was spending too much time with with very limited time allocated to this project while on holidays overseas.
 
 ### Challenges:
 - Mapping my knowledge of Ruby to C#
@@ -122,3 +123,6 @@ Reports any output or errors to the person controlling the robot.
 - Syntax frustrations:
     - "methods" / "functions" are being used interchangeably in all the videos / articles I've read. Not sure which to use.
     - Don't know the concrete naming conventions for Method Names, Variables, instance variables etc.
+- Spend a bit of time looking into getting better nUnit outputs, like rSpec in Ruby how each test failure has an 'expected' and 'got instead' errors.
+- Testing is challenging because I don't have a 100% confidence that the test I write will be testing the right thing.  My pseudo code often needs refactoring because of logic errors, so TDD will take some getting used to.
+- Found LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck. 
