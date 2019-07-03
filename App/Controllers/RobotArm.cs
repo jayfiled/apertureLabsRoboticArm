@@ -59,6 +59,7 @@ namespace apertureLabsRoboticArm
         {
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
+            {
                 if (plate.grid[posY][posX] == 0)
                 {
                     plate.grid[posY][posX] = 1;
@@ -66,7 +67,12 @@ namespace apertureLabsRoboticArm
                 else
                 {
                     LcdScreen.ShowTestTubeFullStatus(1);
-                }   
+                }
+            }
+            else
+            {
+                LcdScreen.PlateIsntReady();                
+            }   
         }
 
         public void Move()
@@ -135,20 +141,22 @@ namespace apertureLabsRoboticArm
             } 
         }
 
-        public void Report()
+        public void Report(int posX, int posY)
         {
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
             {
-                // Checks the boundaries
-                // if (isWithinGrid)
-                //{
-                    // Do the detect method
-                //}
-                //else
-                //{
-                    // Ask LCD screen to say it isn't within the grid
-                //}
+                LcdScreen.ShowCurrentPosition(currentPosition);
+                
+                // checks the status of the test tube in the current position 
+                if (plate.grid[posY][posX] == 0)
+                {
+                    LcdScreen.ShowTestTubeFullStatus(0);                    
+                }
+                else
+                {
+                    LcdScreen.ShowTestTubeFullStatus(1);
+                }
             }
             else
             {

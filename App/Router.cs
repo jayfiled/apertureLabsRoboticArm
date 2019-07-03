@@ -45,7 +45,7 @@ namespace apertureLabsRoboticArm
                     RoboArm.Move();
                     break;
                 case "5":
-                    RoboArm.Report();
+                    RoboArm.Report(RoboArm.currentPosition[0], RoboArm.currentPosition[1]);
                     break;
                 case "6":
                     stop();
@@ -86,9 +86,9 @@ namespace apertureLabsRoboticArm
         {
             return( 
                     @"
-                    ------------
-                    Goodbye
-                    ------------"
+                    ------------------------
+                    Goodbye, thank you for using Aperture's Robotic Arms
+                    ------------------------"
             );
         }
     }

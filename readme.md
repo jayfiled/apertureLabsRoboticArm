@@ -100,6 +100,7 @@ Output: 2,3,EMPTY
     - [ ] **Rename test functions to convention**
     - [ ] **Clean up if else with ternary operators, or C# equivalent**
     - [ ] **Check to see if C# has implied 'else'**
+    - [ ] **Add the control flow logic in the MOVE method to a separate function**
 - [ ] **Improvement**
     - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
     - [ ] **The test tubes can be filled randomly**
