@@ -55,25 +55,18 @@ namespace apertureLabsRoboticArm
             }    
         }
 
-        public void Drop()
+        public void Drop(int posX, int posY)
         {
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
-            {
-                // Checks the boundaries
-                // if (isWithinGrid)
-                //{
-                    // Do the drop method
-                //}
-                //else
-                //{
-                    // Ask LCD screen to say it isn't within the grid
-                //}
-            }
-            else
-            {
-                LcdScreen.PlateIsntReady();
-            }    
+                if (plate.grid[posY][posX] == 0)
+                {
+                    plate.grid[posY][posX] = 1;
+                }
+                else
+                {
+                    LcdScreen.ShowTestTubeFullStatus(1);
+                }   
         }
 
         public void Move()

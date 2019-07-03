@@ -39,7 +39,7 @@ namespace apertureLabsRoboticArm
                     RoboArm.Detect(RoboArm.currentPosition[0], RoboArm.currentPosition[1]);
                     break;
                 case "3":
-                    RoboArm.Drop();
+                    RoboArm.Drop(RoboArm.currentPosition[0], RoboArm.currentPosition[1]);
                     break;
                 case "4":
                     RoboArm.Move();
