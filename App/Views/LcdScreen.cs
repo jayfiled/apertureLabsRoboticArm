@@ -49,6 +49,8 @@ namespace apertureLabsRoboticArm
         {
             String notReady = "The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.";
             Console.WriteLine(notReady);
+            Console.WriteLine("--------------------------------------" );
+            Console.WriteLine("--------------------------------------" );
         }
 
         // Needs error handling for non-ints
@@ -82,14 +84,18 @@ namespace apertureLabsRoboticArm
             if (input == 1)
             {
                 Console.WriteLine("It's full");
+                Console.WriteLine("--------------------------------------" );
             }
-            if (input == 0)
+            else if (input == 0)
             {
                 Console.WriteLine("It's empty");
+                Console.WriteLine("--------------------------------------" );
             }
             else
             {
                 Console.WriteLine("ERR");
+                Console.WriteLine("--------------------------------------" );
+
             }
         }
     }

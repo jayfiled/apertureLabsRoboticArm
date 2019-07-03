@@ -33,11 +33,19 @@ namespace apertureLabsRoboticArm
             LcdScreen.ShowCurrentPosition(currentPosition);
         }
 
-        public void Detect()
+        public void Detect(int posX, int posY)
         {
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
-            {
+            {                
+                if (plate.grid[posY][posX] == 1)
+                {
+                    LcdScreen.ShowTestTubeFullStatus(1);
+                }
+                else
+                {
+                    LcdScreen.ShowTestTubeFullStatus(0);
+                }
                 // Check y first, then check the X'th element of it
                 // if it's a 1 then it's full, if not it's empty.
             }

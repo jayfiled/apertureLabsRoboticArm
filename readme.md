@@ -153,3 +153,5 @@ Reports any output or errors to the person controlling the robot.
     Always wanted to make time for TDD as it allows me to understand what I am actually doing better.
 - Setting up .net workspace on windows. Not challenging, just an extra thing I hadn't done that took time.
     - NuGet package manager
+    - Getting more descriptive test results
+- Struggled to think about which Class should hold the method to check the boundaries of the test tube plate. As it's the view that is getting the place position from the user, I'd have to make new instance of the robot arm to use that function. A static method on the robot arm would probably be ideal, but I have no internet and I get a error message that the function is inaccessible.
