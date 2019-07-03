@@ -22,79 +22,41 @@
 
 4. Program operator manual:
 
-4. To run the tests 🧪
+4. To run the tests: 🧪
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
 - Then from powershell or cmd run `dotnet test -v:n` wait for the logging output then scroll to the bottom for the test results.
 
-
-### 📚 Description
+### 📚 Instructions
 - The application is a simulation of a laboratory pipetting robot arm moving above a square plate of 25 wells, of dimensions 5 units x 5 units.
-- The robot is free to roam above the surface of the plate, but must be prevented from moving beyond the boundaries of the plate. Any movement that would result in the robot arm overshooting the plate must be prevented, however further valid movement commands must still be allowed.
-- Assume that the robot has been primed with enough solution to pipette.
+- The robot can freely move above the surface of the plate, and has been primed with enough solution to pipette.
 
-- Create an application that can read in commands of the following form -
-    `PLACE X,Y`
-    `DETECT`
-    `DROP`
-    `MOVE N, S, E or W`
-    `REPORT`
+- Once started, the application will prompt you for input in the below format:
 
-- PLACE will place the robot above the plate in position X,Y.
-- The origin (0,0) can be considered to be the SOUTH WEST most corner.
-- The first valid command to the robot is a PLACE command, after that, any sequence of commands may be issued, in any order, including another PLACE command. The application should discard all commands in the sequence until a valid PLACE command has been executed.
-- MOVE will move the toy robot one well in the direction specified by the command.
-- DETECT will sense whether the well directly below is FULL, EMPTY or ERR (if the robot cannot detect the plate)
-- DROP place a drop of liquid into the well directly below the robot
-- REPORT will announce the X,Y,FULL/EMPTY (the status of the detection of the well below) of the robot arm. This can be in any form, but standard output is sufficient.
+    - Running `PLACE` will initialize the Robot arm, which will then detect the plate with test tubes.  You can then enter in the starting position X,Y. The origin (0,0) can be considered to be the SOUTH WEST most corner.
+    - Running `DETECT` will check if the test tube below the robot arm position is full or empty.
+    - Running `DROP` will put some pipetting solution into the test tube if it's empty.
+    - Running `MOVE` will prompt you for a direction to move the robot arm by one test tube - N, S, E or W.
+    - Running `REPORT` will give you a status of your current position and whether the test tube in that position is empty or full.
 
-- A robot that is not over the plate can choose the ignore the MOVE and REPORT commands.
-- **Input can be from a file, or from standard input, as the developer chooses.**
-- Provide test data to exercise the application. Test data should include priming the plate with wells that are EMPTY or FULL.
-
-Constraints:
-The **toy** robot must not overshoot the table during movement. This also includes the initial placement of the toy robot.
-Any move that would cause the robot to fall must be ignored.
-
-Example Input and Output:
-a)
-PLACE 0,0
-MOVE N
-REPORT
-Output: 1,0,EMPTY
-
-b)
-PLACE 0,0
-MOVE E
-REPORT
-Output: 0,1,FULL
-
-c)
-PLACE 1,2
-MOVE N
-MOVE E
-REPORT
-Output: 2,3,EMPTY
-
-
-### Project To-do
+### Project To-do ✅
 - [x] **Set up project**
 - [x] **Git and Github**
-- [ ] **Readme**
+- [x] **Readme**
+- [x] **Setup from scratch via readme instructions**
 - [x] **Plan out project**
 - [x] **Set up APP folders and classes**
-    - [ ] **TDD** 👇
+    - [x] **TDD** 👇
         - [x] **program.cs to init router**
         - [x] **Router class**
-- [ ] **Model**
-    - [ ] **TDD** 👇
-        - [ ] **Test Tube class**
+- [x] **Model**
+        - [x] **Test Tube class**
 - [ ] **Application Controllers**
-    - [ ] **TDD** 👇
-        - [ ] **plate class**
-        - [ ] **robot arm**
-- [ ] **View**
-    - [ ] **TDD** 👇
-        - [ ] **LcdDisplay**
+    - [x] **TDD** 👇
+        - [ ] ~~**plate class**~~
+        - [x] **robot arm**
+- [x] **View**
+    - [ ] ~~**TDD**~~ 👇
+        - [x] **LcdDisplay**
 - [ ] **Clean-up**
     - [ ] **Move check for plate ready and grid in own function**
     - [ ] **Rename test functions to convention**
@@ -105,13 +67,11 @@ Output: 2,3,EMPTY
     - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
     - [ ] **The test tubes can be filled randomly**
     - [ ] **Add a do/while loop to the move method so that the user can quickly navigate around the test tube plate**
-
-
-
-
-        
+   
     
-### Class breakdown
+### Project planning 🤔
+
+(<b> This changed dramatically from the end product, but I'll leave here for reflection</b>)
 
 There is a plate that holds 25 test tubes on a 5 by 5 grid.
 
@@ -146,16 +106,16 @@ Reports any output or errors to the person controlling the robot.
 
 ### Router
 
-## Design Considerations
+### Design Considerations
 - VS vs Visual Studio code. Felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
 - "MVC" vs a mini class library - went with "MVC" but felt forced.
 
-## Challenges:
+### Challenges:
 - Mapping my knowledge of Ruby to C#
     Mosh Hamedani on Udemy, traversy media and angelSix on youtube helped out here.
 - Not much exp with testing, let alone in C#.
     Always wanted to make time for TDD as it allows me to understand what I am actually doing better.
-- Setting up .net workspace on windows. Not challenging, just an extra thing I hadn't done that took time.
+- Setting up .net workspace on windows. Not challenging, just time consuming looking up how things are done in C# and setting up a workflow.
     - NuGet package manager
     - Getting more descriptive test results
 - Struggled to think about which Class should hold the method to check the boundaries of the test tube plate. As it's the view that is getting the place position from the user, I'd have to make new instance of the robot arm to use that function. A static method on the robot arm would probably be ideal, but I have no internet and I get a error message that the function is inaccessible.
