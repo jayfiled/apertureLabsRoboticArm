@@ -14,13 +14,13 @@
 - `cd ~/`
 - `mkdir toy-robot-tech-test-joel-james`
 - `cd toy-robot-tech-test-joel-james`
-- `git clone git@github.com:jayfiled/apertureLabsRoboticArm.git`
+- Clone:
+  - HTTPS: `https://github.com/jayfiled/apertureLabsRoboticArm.git` OR 
+  - SSH: `git clone git@github.com:jayfiled/apertureLabsRoboticArm.git`
 - `cd apertureLabsRoboticArm`
 
 3. To run the program ⏩
 - `dotnet run`
-
-4. Program operator manual:
 
 4. To run the tests: 🧪
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
@@ -74,7 +74,7 @@
 (<b> This changed dramatically from the end product, but I'll leave here for reflection</b>)
 
 There is a plate that holds 25 test tubes on a 5 by 5 grid.
-
+#### Model
 - The plate will be created when the program starts and 5 arrays numbered row-0 to row 4 will be filled with 5 instances of test tubes randomly full or not-full.  The number of the array name will be the Y position and the index will be used as the X position to check the test tube's full status and to move around the board.
 - It will have a method that sets the start position in case the start position ever needs to change.  This will also be used to track any 'move' actions.  And also a method  that sets the boundaries of each 'wall' so that the arm doesn't overshoot and could help make the program extensible in case there is need  to fill more than 25 test tubes.
 
@@ -90,21 +90,22 @@ Object: testTube
 
 Property: boolean:full?
 
+#### Controller
+
 Object: robotArm
 
 Properties: none
 
 Actions: Place, Detect, Drop, Move, Report, sensorWithinBoardGrid?, sensorTestTubeFull?
 
-### View
+#### View
 
 Reports any output or errors to the person controlling the robot.
 
-### App
+#### App
 
 'starts' the interface to the robot arm and initializes all the classes and passes them to the router to start interaction with the person controlling the robot arm
 
-### Router
 
 ### Design Considerations
 - VS vs Visual Studio code. Felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
@@ -126,3 +127,4 @@ Reports any output or errors to the person controlling the robot.
 - Spend a bit of time looking into getting better nUnit outputs, like rSpec in Ruby how each test failure has an 'expected' and 'got instead' errors.
 - Testing is challenging because I don't have a 100% confidence that the test I write will be testing the right thing.  My pseudo code often needs refactoring because of logic errors, so TDD will take some getting used to.
 - Found LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck. 
+- Not 100% sure if I am testing the right things because of the above issues.
