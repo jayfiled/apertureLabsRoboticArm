@@ -27,8 +27,6 @@ namespace apertureLabsRoboticArm
                     continueWhileTrue = true;
                 }
             } while (continueWhileTrue);
-            // stuck here ... doesn't a while loop check it's condition at the 
-            // end to see if it should run again?
 
             do
             {
@@ -74,6 +72,9 @@ namespace apertureLabsRoboticArm
         public void ShowCurrentPosition(int[] currentPosition)
         {
             Console.WriteLine("You are now at position X: {0}, Y: {1}", currentPosition[0], currentPosition[1]);
+            Console.WriteLine("--------------------------------------" );
+            Console.WriteLine("--------------------------------------" );
+
         }
 
         public void ShowTestTubeFullStatus(int input)

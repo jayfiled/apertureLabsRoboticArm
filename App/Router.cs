@@ -9,9 +9,9 @@ namespace apertureLabsRoboticArm
         RobotArm RoboArm = new RobotArm();
         public void Run()
         {
+            Console.WriteLine(PrintWelcomeMessage());
             while (running == true)
             {
-            Console.WriteLine(PrintWelcomeMessage());
             DisplayMenu();
             string MenuChoice = Console.ReadLine();
             RouteAction(MenuChoice);
@@ -62,8 +62,8 @@ namespace apertureLabsRoboticArm
             {
                 string action = actions[i];
                 Console.WriteLine("{0}: {1}",i+1, action);
-                Console.WriteLine("=>");
             }
+                Console.WriteLine("   >> ");
         }
 
         private void stop() 
