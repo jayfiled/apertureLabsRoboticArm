@@ -58,6 +58,12 @@
     - [ ] ~~**TDD**~~ 👇
         - [x] **LcdDisplay**
 - [ ] **Clean-up**
+    - [ ] **Go over the [style guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions) and fix styling issues**
+    - [ ] **Rename and set the type of variables to 'var' where type is explicit**
+    - [ ] **Rename methods to conventional names**
+    - [x] **Change switch statement in router to use Ints**
+    - [ ] **Fix indentation issues when pushed to github**
+    - [ ] **Tidy up comments to convention**
     - [ ] **Move check for plate ready and grid in own function**
     - [ ] **Rename test functions to convention**
     - [ ] **Clean up if else with ternary operators, or C# equivalent**

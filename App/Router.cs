@@ -14,8 +14,8 @@ namespace apertureLabsRoboticArm
             {
                 DisplayMenu();
                 // Get the action the user wants to perform and run it over a switch statement. 
-                string MenuChoice = Console.ReadLine();
-                RouteAction(MenuChoice);
+                int menuChoice = System.Convert.ToInt32(Console.ReadLine());
+                RouteAction(menuChoice);
             }
             Console.WriteLine(PrintFarewellMessage());
         }
@@ -29,26 +29,26 @@ namespace apertureLabsRoboticArm
             "EXIT operation of Robotic Arm"
         };
 
-        private void RouteAction(string MenuChoice)
+        private void RouteAction(int menuChoice)
         {
-            switch (MenuChoice)
+            switch (menuChoice)
             {
-                case "1":
+                case 1:
                     robotArm.Place();
                     break;
-                case "2":
+                case 2:
                     robotArm.Detect(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
-                case "3":
+                case 3:
                     robotArm.Drop(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
-                case "4":
+                case 4:
                     robotArm.Move();
                     break;
-                case "5":
+                case 5:
                     robotArm.Report(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
-                case "6":
+                case 6:
                     stop();
                     break;
                 default:
@@ -59,6 +59,7 @@ namespace apertureLabsRoboticArm
 
         private void DisplayMenu()
         {
+            // Loop over the array of actions and print them out with a number prefix. 
             for (int i = 0; i < actions.Length; i++)
             {
                 string action = actions[i];
