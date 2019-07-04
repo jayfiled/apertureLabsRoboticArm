@@ -56,7 +56,7 @@ namespace apertureLabsRoboticArm
             }
           }
         
-		private void DisplayMenu() 
+        private void DisplayMenu() 
         {
             for (int i = 0; i < actions.Length; i++)
             {
