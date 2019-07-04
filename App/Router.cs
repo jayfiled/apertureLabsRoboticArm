@@ -12,9 +12,9 @@ namespace apertureLabsRoboticArm
             Console.WriteLine(PrintWelcomeMessage());
             while (running == true)
             {
-            DisplayMenu();
-            string MenuChoice = Console.ReadLine();
-            RouteAction(MenuChoice);
+                DisplayMenu();
+                string MenuChoice = Console.ReadLine();
+                RouteAction(MenuChoice);
             }
             Console.WriteLine(PrintFarewellMessage());
         }
@@ -55,25 +55,25 @@ namespace apertureLabsRoboticArm
                     break;
             }
         }
-        
-        private void DisplayMenu() 
+
+        private void DisplayMenu()
         {
             for (int i = 0; i < actions.Length; i++)
             {
                 string action = actions[i];
-                Console.WriteLine("{0}: {1}",i+1, action);
+                Console.WriteLine("{0}: {1}", i + 1, action);
             }
-                Console.WriteLine("   >> ");
+            Console.WriteLine("   >> ");
         }
 
-        private void stop() 
+        private void stop()
         {
             running = false;
         }
 
         private String PrintWelcomeMessage()
         {
-            return( 
+            return (
                     @"
                     ------------
                     Welcome to Aperture labs
@@ -84,7 +84,7 @@ namespace apertureLabsRoboticArm
 
         private String PrintFarewellMessage()
         {
-            return( 
+            return (
                     @"
                     ------------------------
                     Goodbye, thank you for using Aperture's Robotic Arms
