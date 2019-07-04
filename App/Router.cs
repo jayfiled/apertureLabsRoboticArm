@@ -6,13 +6,14 @@ namespace apertureLabsRoboticArm
     {
         // Set instance variables.
         public bool running = true;
-        RobotArm RoboArm = new RobotArm();
-        public void Run()
+        RobotArm robotArm = new RobotArm();
+        public void run()
         {
             Console.WriteLine(PrintWelcomeMessage());
             while (running == true)
             {
                 DisplayMenu();
+                // Get the action the user wants to perform and run it over a switch statement. 
                 string MenuChoice = Console.ReadLine();
                 RouteAction(MenuChoice);
             }
@@ -33,19 +34,19 @@ namespace apertureLabsRoboticArm
             switch (MenuChoice)
             {
                 case "1":
-                    RoboArm.Place();
+                    robotArm.Place();
                     break;
                 case "2":
-                    RoboArm.Detect(RoboArm.currentPosition[0], RoboArm.currentPosition[1]);
+                    robotArm.Detect(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
                 case "3":
-                    RoboArm.Drop(RoboArm.currentPosition[0], RoboArm.currentPosition[1]);
+                    robotArm.Drop(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
                 case "4":
-                    RoboArm.Move();
+                    robotArm.Move();
                     break;
                 case "5":
-                    RoboArm.Report(RoboArm.currentPosition[0], RoboArm.currentPosition[1]);
+                    robotArm.Report(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
                 case "6":
                     stop();
@@ -75,10 +76,11 @@ namespace apertureLabsRoboticArm
         {
             return (
                     @"
-                    ------------
+                    ------------------------
                     Welcome to Aperture labs
-                    Please select one of the following commands:
-                    ------------"
+                    Please enter the number that corresponds with one of the following commands:
+                    ------------------------
+                    "
             );
         }
 

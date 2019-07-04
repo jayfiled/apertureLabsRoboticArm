@@ -7,7 +7,7 @@ namespace apertureLabsRoboticArm
         bool continueWhileTrue = true;
         public int[] Place()
         {
-            // Create an array to return to the controller as the X and Y Axis co-ords
+            // Create an array to return to the controller as the X and Y Axis co-ords.
             int[] positionXY = new int[2];
 
             // Get inputs, convert to integer and push to array
@@ -19,7 +19,7 @@ namespace apertureLabsRoboticArm
                 int xAxisStart = System.Convert.ToInt32(Console.ReadLine());
                 if (PlacePostitionWithinPlateBoundary(xAxisStart))
                 {
-                    continueWhileTrue = false;            
+                    continueWhileTrue = false;
                     positionXY[0] = xAxisStart;
                 }
                 else
@@ -33,14 +33,14 @@ namespace apertureLabsRoboticArm
                 Console.WriteLine("Which position from 0 - 4 on the y-axis would you like to start?");
                 int yAxisStart = System.Convert.ToInt32(Console.ReadLine());
                 if (PlacePostitionWithinPlateBoundary(yAxisStart))
-                    {
-                        continueWhileTrue = false;
-                        positionXY[1] = yAxisStart;
-                    }
-                    else
-                    {
-                        continueWhileTrue = true;
-                    }
+                {
+                    continueWhileTrue = false;
+                    positionXY[1] = yAxisStart;
+                }
+                else
+                {
+                    continueWhileTrue = true;
+                }
             } while (continueWhileTrue);
             return positionXY;
         }
@@ -49,11 +49,11 @@ namespace apertureLabsRoboticArm
         {
             String notReady = "The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.";
             Console.WriteLine(notReady);
-            Console.WriteLine("--------------------------------------" );
-            Console.WriteLine("--------------------------------------" );
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("--------------------------------------");
         }
 
-        // Needs error handling for non-ints
+        // Needs error handling for non-ints.
         public bool PlacePostitionWithinPlateBoundary(int positionXorY)
         {
             if (positionXorY >= 0 && positionXorY <= 4)
@@ -68,14 +68,14 @@ namespace apertureLabsRoboticArm
                 of the test tube grid - please choose a number
                 between 0 and 4."
                  );
-                 return false;
+                return false;
             }
         }
         public void ShowCurrentPosition(int[] currentPosition)
         {
             Console.WriteLine("You are now at position X: {0}, Y: {1}", currentPosition[0], currentPosition[1]);
-            Console.WriteLine("--------------------------------------" );
-            Console.WriteLine("--------------------------------------" );
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("--------------------------------------");
 
         }
 
@@ -84,17 +84,17 @@ namespace apertureLabsRoboticArm
             if (input == 1)
             {
                 Console.WriteLine("It's full");
-                Console.WriteLine("--------------------------------------" );
+                Console.WriteLine("--------------------------------------");
             }
             else if (input == 0)
             {
                 Console.WriteLine("It's empty");
-                Console.WriteLine("--------------------------------------" );
+                Console.WriteLine("--------------------------------------");
             }
             else
             {
                 Console.WriteLine("ERR");
-                Console.WriteLine("--------------------------------------" );
+                Console.WriteLine("--------------------------------------");
 
             }
         }

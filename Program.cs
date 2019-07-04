@@ -7,7 +7,7 @@ namespace apertureLabsRoboticArm
         static void Main(string[] args)
         {
             Router r = new Router();
-            r.Run();
+            r.run();
         }
     }
 }

@@ -4,19 +4,19 @@ namespace apertureLabsRoboticArm
 {
     class RobotArm
     {
-    // Instance variable for current position (x, y)
+        // Instance variable for current position (x, y)
         public int[] currentPosition = { 0, 0 };
 
 
-    // Instantiate the testTubePlate
+        // Instantiate the testTubePlate
         public TestTubePlate plate = new TestTubePlate();
 
 
-    // Instantiate the view
+        // Instantiate the view
         public LcdScreen LcdScreen = new LcdScreen();
 
 
-    // Each method will ask the view for input if necessary
+        // Each method will ask the view for input if necessary
 
         public void Place()
         {
@@ -29,7 +29,7 @@ namespace apertureLabsRoboticArm
             int[] moveTo = LcdScreen.Place();
             currentPosition[0] = moveTo[0];
             currentPosition[1] = moveTo[1];
-    
+
             LcdScreen.ShowCurrentPosition(currentPosition);
         }
 
@@ -37,7 +37,7 @@ namespace apertureLabsRoboticArm
         {
             // Checks if the plate is ready for operation
             if (IsPlateIsReady())
-            {                
+            {
                 if (plate.grid[posY][posX] == 1)
                 {
                     LcdScreen.ShowTestTubeFullStatus(1);
@@ -52,7 +52,7 @@ namespace apertureLabsRoboticArm
             else
             {
                 LcdScreen.PlateIsntReady();
-            }    
+            }
         }
 
         public void Drop(int posX, int posY)
@@ -71,8 +71,8 @@ namespace apertureLabsRoboticArm
             }
             else
             {
-                LcdScreen.PlateIsntReady();                
-            }   
+                LcdScreen.PlateIsntReady();
+            }
         }
 
         public void Move()
@@ -84,61 +84,61 @@ namespace apertureLabsRoboticArm
                 Console.WriteLine("Press 'N' to move North (up), 'S' to move South (down), 'E' to move East (right) and 'W' for West (left)");
                 String direction = Console.ReadLine().ToUpper();
                 switch (direction)
-            {
-                case "N":
-                    if (IsWithinGrid((currentPosition[1] + 1)))
-                    {
-                        currentPosition[1] += 1;
-                    } 
-                    else
-                    {
-                        Console.WriteLine("You are at the edge already, please use S, E or W");
-                    }
-                    LcdScreen.ShowCurrentPosition(currentPosition);
-                    break;
-                case "S":
-                    if (IsWithinGrid((currentPosition[1] - 1)))
-                    {
-                        currentPosition[1] -= 1;
-                    } 
-                    else
-                    {
-                        Console.WriteLine("You are at the edge already, please use N, E or W");
-                    }
-                    LcdScreen.ShowCurrentPosition(currentPosition);
-                    break;
-                case "E":
-                    if (IsWithinGrid((currentPosition[0] + 1)))
-                    {
-                        currentPosition[0] += 1;
-                    } 
-                    else
-                    {
-                        Console.WriteLine("You are at the edge already, please use N, S or W");
-                    }
-                    LcdScreen.ShowCurrentPosition(currentPosition);
-                    break;
-                case "W":
-                    if (IsWithinGrid((currentPosition[0] - 1)))
-                    {
-                        currentPosition[0] -= 1;
-                    } 
-                    else
-                    {
-                        Console.WriteLine("You are at the edge already, please use N, S or E");
-                    }
-                    LcdScreen.ShowCurrentPosition(currentPosition);
-                    break;
-                default:
-                    Console.WriteLine("Please choose the letters N, S, E or W");
-                    break;
-            }
+                {
+                    case "N":
+                        if (IsWithinGrid((currentPosition[1] + 1)))
+                        {
+                            currentPosition[1] += 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You are at the edge already, please use S, E or W");
+                        }
+                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        break;
+                    case "S":
+                        if (IsWithinGrid((currentPosition[1] - 1)))
+                        {
+                            currentPosition[1] -= 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You are at the edge already, please use N, E or W");
+                        }
+                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        break;
+                    case "E":
+                        if (IsWithinGrid((currentPosition[0] + 1)))
+                        {
+                            currentPosition[0] += 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You are at the edge already, please use N, S or W");
+                        }
+                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        break;
+                    case "W":
+                        if (IsWithinGrid((currentPosition[0] - 1)))
+                        {
+                            currentPosition[0] -= 1;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You are at the edge already, please use N, S or E");
+                        }
+                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        break;
+                    default:
+                        Console.WriteLine("Please choose the letters N, S, E or W");
+                        break;
+                }
 
             }
             else
             {
                 LcdScreen.PlateIsntReady();
-            } 
+            }
         }
 
         public void Report(int posX, int posY)
@@ -147,11 +147,11 @@ namespace apertureLabsRoboticArm
             if (IsPlateIsReady())
             {
                 LcdScreen.ShowCurrentPosition(currentPosition);
-                
+
                 // checks the status of the test tube in the current position 
                 if (plate.grid[posY][posX] == 0)
                 {
-                    LcdScreen.ShowTestTubeFullStatus(0);                    
+                    LcdScreen.ShowTestTubeFullStatus(0);
                 }
                 else
                 {
@@ -161,7 +161,7 @@ namespace apertureLabsRoboticArm
             else
             {
                 LcdScreen.PlateIsntReady();
-            } 
+            }
 
         }
 
@@ -178,7 +178,7 @@ namespace apertureLabsRoboticArm
                 return false;
             }
         }
-        
+
         // Method to check the boundaries
 
         public bool IsWithinGrid(int positionXorY)

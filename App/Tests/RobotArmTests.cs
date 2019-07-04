@@ -26,11 +26,11 @@ namespace apertureLabsRoboticArm
         public void FunctionsRunBeforePlaceShouldFail()
         {
             // results
-            bool[] expectedResults = {false, true};
+            bool[] expectedResults = { false, true };
             bool[] actualResults = new bool[2];
 
             // Run other functions before 'place' and should receive feedback.
-            r.Detect(1,0);
+            r.Detect(1, 0);
             actualResults[0] = r.IsPlateIsReady();
             r.plate.readyForOperation = true;
             actualResults[1] = r.IsPlateIsReady();
@@ -41,7 +41,7 @@ namespace apertureLabsRoboticArm
             r.plate.readyForOperation = false;
 
         }
-            
+
 
         [TestCase()]
         public void PlaceMethodShouldHandleWrongInput()
