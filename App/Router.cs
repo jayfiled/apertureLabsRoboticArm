@@ -4,7 +4,7 @@ namespace apertureLabsRoboticArm
 {
     class Router
     {
-        // Set instance variables
+        // Set instance variables.
         public bool running = true;
         RobotArm RoboArm = new RobotArm();
         public void Run()
@@ -28,8 +28,8 @@ namespace apertureLabsRoboticArm
             "EXIT operation of Robotic Arm"
         };
 
-          private void RouteAction(string MenuChoice)
-          {
+        private void RouteAction(string MenuChoice)
+        {
             switch (MenuChoice)
             {
                 case "1":
@@ -54,7 +54,7 @@ namespace apertureLabsRoboticArm
                     Console.WriteLine("Please choose 1, 2, 3, 4, 5 or 6");
                     break;
             }
-          }
+        }
         
         private void DisplayMenu() 
         {
