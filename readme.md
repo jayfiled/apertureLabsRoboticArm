@@ -3,15 +3,15 @@
 ### Table of Contents
 - **[Setup Instructions](#ℹ-setup-instructions)**
 
-- **[Robotic Arm Usage Manual](#📚-robotic-arm-usage-manual)**
+- **[Robotic Arm Usage Manual](#-robotic-arm-usage-manual)**
 
-- **[Project to-do](#✅-project-to-do)**
+- **[Project to-do](#-project-to-do)**
 
-- **[Project Planning](#🤔-project-planning)**
+- **[Project Planning](#-project-planning)**
 
-- **[Design Considerations](#🖼-design-considerations)**
+- **[Design Considerations](#-design-considerations)**
 
-- **[Challenges](#💪-challenges)**
+- **[Challenges](#-challenges)**
 
 ## ℹ Setup instructions
 1. Make sure dotnet 👇
