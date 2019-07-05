@@ -55,7 +55,7 @@ namespace apertureLabsRoboticArm
             }
         }
 
-        public void Drop(int posX, int posY)
+        public void drop(int posX, int posY)
         {
             // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())
@@ -75,7 +75,7 @@ namespace apertureLabsRoboticArm
             }
         }
 
-        public void Move()
+        public void move()
         {
             // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())

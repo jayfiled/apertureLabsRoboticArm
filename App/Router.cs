@@ -40,10 +40,10 @@ namespace apertureLabsRoboticArm
                     robotArm.detect(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
                 case 3:
-                    robotArm.Drop(robotArm.currentPosition[0], robotArm.currentPosition[1]);
+                    robotArm.drop(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
                 case 4:
-                    robotArm.Move();
+                    robotArm.move();
                     break;
                 case 5:
                     robotArm.Report(robotArm.currentPosition[0], robotArm.currentPosition[1]);
