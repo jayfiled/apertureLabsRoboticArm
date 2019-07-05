@@ -105,6 +105,16 @@ namespace apertureLabsRoboticArm
 
         }
 
+        public String printAndGetMoveCommands()
+        {
+            Console.WriteLine("Which directions would you like to move in?");
+            Console.WriteLine(@"
+                                Press 'N' to move North (up), 'S' to move South (down),
+                                'E' to move East (right) and 'W' for West (left)
+                                ");         
+            return Console.ReadLine().ToUpper();
+        }
+
         public static void error()
         {
             Console.WriteLine(@"

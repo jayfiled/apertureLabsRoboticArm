@@ -81,9 +81,7 @@ namespace apertureLabsRoboticArm
             // Checks if the testTubePlate is ready for operation
             if (isPlateReady())
             {
-                Console.WriteLine("Which directions would you like to move in?");
-                Console.WriteLine("Press 'N' to move North (up), 'S' to move South (down), 'E' to move East (right) and 'W' for West (left)");
-                String direction = Console.ReadLine().ToUpper();
+                String direction = lcdScreen.printAndGetMoveCommands();
                 switch (direction)
                 {
                     case "N":
@@ -93,7 +91,7 @@ namespace apertureLabsRoboticArm
                         }
                         else
                         {
-                            Console.WriteLine("You are at the edge already, please use S, E or W");
+                            lcdScreen.inputWithinGrid("edge");
                         }
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
@@ -104,7 +102,7 @@ namespace apertureLabsRoboticArm
                         }
                         else
                         {
-                            Console.WriteLine("You are at the edge already, please use N, E or W");
+                            lcdScreen.inputWithinGrid("edge");
                         }
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
@@ -115,7 +113,7 @@ namespace apertureLabsRoboticArm
                         }
                         else
                         {
-                            Console.WriteLine("You are at the edge already, please use N, S or W");
+                            lcdScreen.inputWithinGrid("edge");
                         }
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
@@ -126,7 +124,7 @@ namespace apertureLabsRoboticArm
                         }
                         else
                         {
-                            Console.WriteLine("You are at the edge already, please use N, S or E");
+                            lcdScreen.inputWithinGrid("edge");
                         }
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
