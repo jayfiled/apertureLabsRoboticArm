@@ -4,45 +4,15 @@ namespace apertureLabsRoboticArm
 {
     class LcdScreen
     {
-        bool continueWhileTrue = true;
-        public int[] Place()
+        public int getPlacement(string axis)
         {
-            // Create an array to return to the controller as the X and Y Axis co-ords.
-            int[] positionXY = new int[2];
-
             // Get inputs, convert to integer and push to array
             // while loops to stop and provide feedback if the input is outside the 
             // test tube plate's boundaries.
-            do
-            {
-                Console.WriteLine("Which position from 0 - 4 on the x-axis would you like to start?");
-                int xAxisStart = System.Convert.ToInt32(Console.ReadLine());
-                if (PlacePostitionWithinPlateBoundary(xAxisStart))
-                {
-                    continueWhileTrue = false;
-                    positionXY[0] = xAxisStart;
-                }
-                else
-                {
-                    continueWhileTrue = true;
-                }
-            } while (continueWhileTrue);
 
-            do
-            {
-                Console.WriteLine("Which position from 0 - 4 on the y-axis would you like to start?");
-                int yAxisStart = System.Convert.ToInt32(Console.ReadLine());
-                if (PlacePostitionWithinPlateBoundary(yAxisStart))
-                {
-                    continueWhileTrue = false;
-                    positionXY[1] = yAxisStart;
-                }
-                else
-                {
-                    continueWhileTrue = true;
-                }
-            } while (continueWhileTrue);
-            return positionXY;
+            Console.WriteLine("Which position from 0 - 4 on the {0}-axis would you like to start?", axis);
+            int position = System.Convert.ToInt32(Console.ReadLine());
+            return position;
         }
 
         public void PlateIsntReady()
@@ -58,17 +28,11 @@ namespace apertureLabsRoboticArm
         {
             if (positionXorY >= 0 && positionXorY <= 4)
             {
-                Console.WriteLine("Nice, thanks.");
-                return true;
+                return inputWithinGrid("ok");
             }
             else
             {
-                Console.WriteLine(
-                @"I'm sorry, that isn't within the boundaries
-                of the test tube grid - please choose a number
-                between 0 and 4."
-                 );
-                return false;
+                return inputWithinGrid("bothOutside");
             }
         }
         public void ShowCurrentPosition(int[] currentPosition)
@@ -97,6 +61,56 @@ namespace apertureLabsRoboticArm
                 Console.WriteLine("--------------------------------------");
 
             }
+        }
+
+        public bool inputWithinGrid(string status)
+        {
+            switch (status)
+            {
+                case "edge":
+                    Console.WriteLine("You are at the edge already, please try another direction");
+                    return false;
+                case "x":
+                    Console.WriteLine(
+                    @"
+                    I'm sorry, the X axis input isn't within the boundaries
+                    of the test tube grid - please choose a number
+                    between 0 and 4.
+                    ");
+                    return false;
+                case "y":
+                    Console.WriteLine(
+                    @"
+                    I'm sorry, the Y axis input isn't within the boundaries
+                    of the test tube grid - please choose a number
+                    between 0 and 4.
+                    ");
+                    return false;
+                case "bothOutside":
+                    Console.WriteLine(
+                    @"I'm sorry, neither the X or the Y axis inputs aren't within the boundaries
+                        of the test tube grid - please choose a number
+                        between 0 and 4.
+                        "
+                    );
+                    return false;
+                case "ok":
+                    Console.WriteLine(@"Nice, thanks.
+                                    ");
+                    return true;
+                default:
+                    Console.WriteLine("Something went wrong, please restart and try again");
+                    return false;
+            }
+
+        }
+
+        public void error()
+        {
+            Console.WriteLine(@"
+                                Error! You are only able to enter numbers! 
+                                Please try again.
+                                ");
         }
     }
 }

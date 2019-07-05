@@ -12,7 +12,7 @@ namespace apertureLabsRoboticArm
             Console.WriteLine(PrintWelcomeMessage());
             while (running == true)
             {
-                DisplayMenu();
+                displayMenu();
                 // Get the action the user wants to perform and run it over a switch statement. 
                 int menuChoice = System.Convert.ToInt32(Console.ReadLine());
                 RouteAction(menuChoice);
@@ -57,7 +57,7 @@ namespace apertureLabsRoboticArm
             }
         }
 
-        private void DisplayMenu()
+        private void displayMenu()
         {
             // Loop over the array of actions and print them out with a number prefix. 
             for (int i = 0; i < actions.Length; i++)

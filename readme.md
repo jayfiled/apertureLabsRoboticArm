@@ -69,6 +69,7 @@
     - [ ] **Clean up if else with ternary operators, or C# equivalent**
     - [ ] **Check to see if C# has implied 'else'**
     - [ ] **Add the control flow logic in the MOVE method to a separate function**
+    - [ ] **lcdScreen shouldn't have a check for the grid boundaries.  This method already exists in the RobotArm - too much control for the view - refactor to use robot arm**
 - [ ] **Improvement**
     - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
     - [ ] **The test tubes can be filled randomly**

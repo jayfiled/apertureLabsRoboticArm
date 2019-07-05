@@ -4,38 +4,39 @@ namespace apertureLabsRoboticArm
 {
     class RobotArm
     {
-        // Instance variable for current position (x, y)
+        // Instance variable for current position (x, y).
         public int[] currentPosition = { 0, 0 };
 
-
-        // Instantiate the testTubePlate
+        // Instantiate the classes 'testTubePlate' and 'lcdScreen' for reference within the methods.
         public TestTubePlate testTubePlate = new TestTubePlate();
-
-
-        // Instantiate the view
         public LcdScreen lcdScreen = new LcdScreen();
 
-
-        // Each method will ask the view for input if necessary
+        // 
+        bool keepPromptingForInput = true;
 
         public void place()
         {
-            // Sets the testTubePlate object's 'readyForOperation' instance variable to true
+            // To ensure that you can't execute other actions before the place() method.
             testTubePlate.readyForOperation = true;
-            // Checks the boundaries
 
-            // Get input from User about where to place the robot arm and save it to the
-            // robot arm's current position
-            int[] moveTo = lcdScreen.Place();
-            currentPosition[0] = moveTo[0];
-            currentPosition[1] = moveTo[1];
+            // Get input from user about where to place the robot arm and save it to the
+            // robot arm's current position.
+            try
+            {
+                currentPosition[0] = loopUntilTrue("x");
+                currentPosition[1] = loopUntilTrue("y");
+            }
+            catch
+            {
+                lcdScreen.error();
+            }
 
             lcdScreen.ShowCurrentPosition(currentPosition);
         }
 
         public void detect(int posX, int posY)
         {
-            // Checks if the testTubePlate is ready for operation
+            // Checks if the testTubePlate is ready for operation.
             if (isPlateReady())
             {
                 if (testTubePlate.grid[posY][posX] == 1)
@@ -86,7 +87,7 @@ namespace apertureLabsRoboticArm
                 switch (direction)
                 {
                     case "N":
-                        if (IsWithinGrid((currentPosition[1] + 1)))
+                        if (isWithinGrid((currentPosition[1] + 1)))
                         {
                             currentPosition[1] += 1;
                         }
@@ -97,7 +98,7 @@ namespace apertureLabsRoboticArm
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     case "S":
-                        if (IsWithinGrid((currentPosition[1] - 1)))
+                        if (isWithinGrid((currentPosition[1] - 1)))
                         {
                             currentPosition[1] -= 1;
                         }
@@ -108,7 +109,7 @@ namespace apertureLabsRoboticArm
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     case "E":
-                        if (IsWithinGrid((currentPosition[0] + 1)))
+                        if (isWithinGrid((currentPosition[0] + 1)))
                         {
                             currentPosition[0] += 1;
                         }
@@ -119,7 +120,7 @@ namespace apertureLabsRoboticArm
                         lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     case "W":
-                        if (IsWithinGrid((currentPosition[0] - 1)))
+                        if (isWithinGrid((currentPosition[0] - 1)))
                         {
                             currentPosition[0] -= 1;
                         }
@@ -165,8 +166,32 @@ namespace apertureLabsRoboticArm
 
         }
 
-        // Method to check the state of the readyForOperation var in TestTubePlate
+        // Below are the helper methods to check the state of things within the app.
 
+        // A loop to keep prompting the user if their placement of the 
+        // arm is within the test tube grid.
+        public int loopUntilTrue(string axis)
+        {
+            int axisPositionInput;
+            do
+            {
+                axisPositionInput = lcdScreen.getPlacement(axis);
+                if (isWithinGrid(axisPositionInput))
+                {
+                    keepPromptingForInput = false;
+                    lcdScreen.inputWithinGrid("ok");
+                }
+                else
+                {
+                    keepPromptingForInput = true;
+                    lcdScreen.inputWithinGrid(axis);
+                }
+            } while (keepPromptingForInput);
+
+            return axisPositionInput;
+        }
+
+        // A method to ensure that you call the place action first.
         public bool isPlateReady()
         {
             if (testTubePlate.readyForOperation == true)
@@ -179,11 +204,13 @@ namespace apertureLabsRoboticArm
             }
         }
 
-        // Method to check the boundaries
-
-        public bool IsWithinGrid(int positionXorY)
+        // Method to check if input is within the test tube grid boundaries.
+        public static bool isWithinGrid(int position)
         {
-            if (positionXorY >= 0 && positionXorY <= 4)
+            int innerEdgeOfTheGrid = 0;
+            int outerEdgeOfTheGrid = 4;
+
+            if (position >= innerEdgeOfTheGrid && position <= outerEdgeOfTheGrid)
             {
                 return true;
             }
