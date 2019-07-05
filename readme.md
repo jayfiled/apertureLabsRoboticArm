@@ -85,6 +85,9 @@
     - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
     - [ ] **The test tubes can be filled randomly**
     - [ ] **Add a do/while loop to the move method. So that the user can quickly navigate around the test tube plate without having to go back to the menu**
+    - [ ] **Replace pseudo-code in the incomplete tests**
+    - [ ] **Evaluate the unit tests and improve them and write more for more classes**
+    
    
     
 ### 🤔 Project planning 
@@ -130,6 +133,7 @@ Reports any output or errors to the person controlling the robot.
 - "MVC" vs a mini class library - went with "MVC" but felt forced as I only had static data in the TestTube class.
 - Used an ugly switch statement in the view for the N, S, E, W movement action.  I don't like the look of them as they take up too much space and seem a little repetitive, and I wanted to move the logic out of each case, but ended up leaving it because I wanted to submit the challenge today. 
 - While the tests were a great way of planning out my project, I was spending too much time with with very limited time allocated to this project while travelling overseas.
+- Started with TDD and it helped pave the way for the app structure, but had to drop it because I wanted to hand in the challenge.
 
 ### 💪 Challenges:
 - Mapping my knowledge of Ruby to C#
@@ -143,8 +147,10 @@ Reports any output or errors to the person controlling the robot.
     - "methods" / "functions" are being used interchangeably in all the videos / articles I've read. Not sure which to use. 
     - Don't know the concrete naming conventions for Method Names, Variables, instance variables etc.
     - ✅Overcame it by looking up the (style guide)[https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions]👍👍
-- Spend a bit of time looking into getting better nUnit outputs, like rSpec in Ruby how each test failure has an 'expected' and 'got instead' errors.
+- Spent a bit of time looking into getting better nUnit outputs, like rSpec in Ruby how each test failure has an 'expected' and 'got instead' errors.
+    - ✅ Only found the command line option `-v:n` - but needed to spend more time in the docs.
 - Testing is challenging because I don't have a 100% confidence that the test I write will be testing the right thing.  My pseudo code often needs refactoring because of logic errors, so TDD will take some getting used to.
-- Found out about LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck.
 - Not 100% sure if I am testing the right things because of the above issues.
+- When I started the tests, I was expecting to write the tests all out with pseudo code, then slowly code the app based on the tests I wanted to write and then write them and run them.  Then as I added more code, I was expecting to develop the app in a state where I write a function, run the tests, check results and repeat. I was hoping that I wouldn't have to run the app as a user to make sure it hadn't broke. But instead I found that I would write a test, then to run that test I would need to code more than just the method I was testing.  The method was often calling a method in another class, which needed feedback from an instance of the view etc.  I definitely look forward to doing some courses targeting doing this the right way.  It should click after struggling through it the wrong way.
 - Now I've scratched around in C# I am looking forward to all the 'ah-ha!' moments i'll get while doing an online course.
+- Found out about LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck. Seems like there is a way to connect LINQpad to the project that I look forward to exploring more.
