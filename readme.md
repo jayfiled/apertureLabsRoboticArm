@@ -1,17 +1,17 @@
 ## Write software to automate the pipetting process in an aperture laboratory
 
 ### Table of Contents
-ℹ **[Setup Instructions](#setup-instructions)**
+- **[Setup Instructions](#setup-instructions)**
 
-📚 **[Robotic Arm Usage Manual](#robotic-arm-usage-manual)**
+- **[Robotic Arm Usage Manual](#robotic-arm-usage-manual)**
 
-✅ **[Project to-do](#project-to-do)**
+- **[Project to-do](#project-to-do)**
 
-🤔 **[Project Planning](#project-planning)**
+- **[Project Planning](#project-planning)**
 
-🖼 **[Design Considerations](#design-considerations)**
+- **[Design Considerations](#design-considerations)**
 
-💪 **[Challenges](#challenges)**
+- **[Challenges](#challenges)**
 
 ## ℹ Setup instructions
 1. Make sure dotnet 👇
