@@ -31,9 +31,9 @@ namespace apertureLabsRoboticArm
 
             // Run other functions before 'place' and should receive feedback.
             r.detect(1, 0);
-            actualResults[0] = r.IsPlateIsReady();
+            actualResults[0] = r.isPlateReady();
             r.testTubePlate.readyForOperation = true;
-            actualResults[1] = r.IsPlateIsReady();
+            actualResults[1] = r.isPlateReady();
 
             Assert.AreEqual(expectedResults, actualResults);
 

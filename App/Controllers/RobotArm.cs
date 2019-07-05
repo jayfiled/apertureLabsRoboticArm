@@ -36,7 +36,7 @@ namespace apertureLabsRoboticArm
         public void detect(int posX, int posY)
         {
             // Checks if the testTubePlate is ready for operation
-            if (IsPlateIsReady())
+            if (isPlateReady())
             {
                 if (testTubePlate.grid[posY][posX] == 1)
                 {
@@ -58,7 +58,7 @@ namespace apertureLabsRoboticArm
         public void drop(int posX, int posY)
         {
             // Checks if the testTubePlate is ready for operation
-            if (IsPlateIsReady())
+            if (isPlateReady())
             {
                 if (testTubePlate.grid[posY][posX] == 0)
                 {
@@ -78,7 +78,7 @@ namespace apertureLabsRoboticArm
         public void move()
         {
             // Checks if the testTubePlate is ready for operation
-            if (IsPlateIsReady())
+            if (isPlateReady())
             {
                 Console.WriteLine("Which directions would you like to move in?");
                 Console.WriteLine("Press 'N' to move North (up), 'S' to move South (down), 'E' to move East (right) and 'W' for West (left)");
@@ -141,10 +141,10 @@ namespace apertureLabsRoboticArm
             }
         }
 
-        public void Report(int posX, int posY)
+        public void report(int posX, int posY)
         {
             // Checks if the testTubePlate is ready for operation
-            if (IsPlateIsReady())
+            if (isPlateReady())
             {
                 lcdScreen.ShowCurrentPosition(currentPosition);
 
@@ -167,7 +167,7 @@ namespace apertureLabsRoboticArm
 
         // Method to check the state of the readyForOperation var in TestTubePlate
 
-        public bool IsPlateIsReady()
+        public bool isPlateReady()
         {
             if (testTubePlate.readyForOperation == true)
             {

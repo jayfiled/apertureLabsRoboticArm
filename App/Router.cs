@@ -46,7 +46,7 @@ namespace apertureLabsRoboticArm
                     robotArm.move();
                     break;
                 case 5:
-                    robotArm.Report(robotArm.currentPosition[0], robotArm.currentPosition[1]);
+                    robotArm.report(robotArm.currentPosition[0], robotArm.currentPosition[1]);
                     break;
                 case 6:
                     stop();
