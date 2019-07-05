@@ -11,9 +11,6 @@ namespace apertureLabsRoboticArm
         public TestTubePlate testTubePlate = new TestTubePlate();
         public LcdScreen lcdScreen = new LcdScreen();
 
-        // 
-        bool keepPromptingForInput = true;
-
         public void place()
         {
             // To ensure that you can't execute other actions before the place() method.
@@ -170,6 +167,7 @@ namespace apertureLabsRoboticArm
         // arm is within the test tube grid.
         public int loopUntilTrue(string axis)
         {
+            bool keepPromptingForInput = true;
             int axisPositionInput;
             do
             {

@@ -1,8 +1,14 @@
 ## Write software to automate the pipetting process in an aperture laboratory
 
-- [ ] 🔥 **Add a TOC here**
+### Table of Contents
+ℹ **[Setup Instructions](#setup-instructions)**
+📚 **[Robotic Arm Usage Manual](#robotic-arm-usage-manual)**
+✅ **[Project to-do](#project-to-do)**
+🤔 **[Project Planning](#project-planning)**
+🖼 **[Design Considerations](#design-considerations)**
+💪 **[Challenges](#challenges)**
 
-## Setup instructions:
+## ℹ Setup instructions
 1. Make sure dotnet 👇
 
 - For [Windows](https://dotnet.microsoft.com/download/dotnet-core/2.2), [Linux](https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-2.2.300) or [MacOSX](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-macos-x64-installer)
@@ -26,7 +32,7 @@
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
 - Then from powershell or cmd run `dotnet test -v:n` wait for the logging output then scroll to the bottom for the test results.
 
-### 📚 Instructions
+### 📚 Robotic Arm Usage Manual
 - The application is a simulation of a laboratory pipetting robot arm moving above a square plate of 25 wells, of dimensions 5 units x 5 units.
 - The robot can freely move above the surface of the plate, and has been primed with enough solution to pipette.
 
@@ -38,7 +44,7 @@
     - Running `MOVE` will prompt you for a direction to move the robot arm by one test tube - N, S, E or W.
     - Running `REPORT` will give you a status of your current position and whether the test tube in that position is empty or full.
 
-### Project To-do ✅
+### ✅ Project To-do 
 - [x] **Set up project**
 - [x] **Git and Github**
 - [x] **Readme**
@@ -76,7 +82,7 @@
     - [ ] **Add a do/while loop to the move method. So that the user can quickly navigate around the test tube plate without having to go back to the menu**
    
     
-### Project planning 🤔
+### 🤔 Project planning 
 
 (<b> This changed dramatically from the end product, but I'll leave here for reflection</b>)
 
@@ -114,13 +120,13 @@ Reports any output or errors to the person controlling the robot.
 'starts' the interface to the robot arm and initializes all the classes and passes them to the router to start interaction with the person controlling the robot arm
 
 
-### Design Considerations
+### 🖼 Design Considerations
 - VS vs Visual Studio code. I felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
 - "MVC" vs a mini class library - went with "MVC" but felt forced as I only had static data in the TestTube class.
 - Used an ugly switch statement in the view for the N, S, E, W movement action.  I don't like the look of them as they take up too much space and seem a little repetitive, and I wanted to move the logic out of each case, but ended up leaving it because I wanted to submit the challenge today. 
 - While the tests were a great way of planning out my project, I was spending too much time with with very limited time allocated to this project while travelling overseas.
 
-### Challenges:
+### 💪 Challenges:
 - Mapping my knowledge of Ruby to C#
     ✅ Needed to research everything. Mosh Hamedani on Udemy, traversy media and angelSix on youtube helped out here.
 - Not much exp with testing, let alone in C#.
@@ -134,6 +140,6 @@ Reports any output or errors to the person controlling the robot.
     - ✅Overcame it by looking up the (style guide)[https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions]👍👍
 - Spend a bit of time looking into getting better nUnit outputs, like rSpec in Ruby how each test failure has an 'expected' and 'got instead' errors.
 - Testing is challenging because I don't have a 100% confidence that the test I write will be testing the right thing.  My pseudo code often needs refactoring because of logic errors, so TDD will take some getting used to.
-- Found out about LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck. 
+- Found out about LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck.
 - Not 100% sure if I am testing the right things because of the above issues.
 - Now I've scratched around in C# I am looking forward to all the 'ah-ha!' moments i'll get while doing an online course.
