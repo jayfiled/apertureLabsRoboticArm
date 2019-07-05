@@ -1,11 +1,6 @@
 using System;
 using NUnit.Framework;
 
-// Test function naming conventions:
-// TheMethodOnTheTest_TheTestScenario
-// Expected behavior, i.e.
-// CanBeCancelledBy_SameUserCancellingReservation_ReturnTrue()
-
 namespace apertureLabsRoboticArm
 {
     [TestFixture]

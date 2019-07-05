@@ -31,7 +31,7 @@ namespace apertureLabsRoboticArm
                 LcdScreen.error();
             }
 
-            lcdScreen.ShowCurrentPosition(currentPosition);
+            lcdScreen.showCurrentPosition(currentPosition);
         }
 
         public void detect(int posX, int posY)
@@ -41,18 +41,18 @@ namespace apertureLabsRoboticArm
             {
                 if (testTubePlate.grid[posY][posX] == 1)
                 {
-                    lcdScreen.ShowTestTubeFullStatus(1);
+                    lcdScreen.showTestTubeFullStatus(1);
                 }
                 else
                 {
-                    lcdScreen.ShowTestTubeFullStatus(0);
+                    lcdScreen.showTestTubeFullStatus(0);
                 }
                 // Check y first, then check the X'th element of it
                 // if it's a 1 then it's full, if not it's empty.
             }
             else
             {
-                lcdScreen.PlateIsntReady();
+                lcdScreen.plateIsntReady();
             }
         }
 
@@ -67,12 +67,12 @@ namespace apertureLabsRoboticArm
                 }
                 else
                 {
-                    lcdScreen.ShowTestTubeFullStatus(1);
+                    lcdScreen.showTestTubeFullStatus(1);
                 }
             }
             else
             {
-                lcdScreen.PlateIsntReady();
+                lcdScreen.plateIsntReady();
             }
         }
 
@@ -93,7 +93,7 @@ namespace apertureLabsRoboticArm
                         {
                             lcdScreen.inputWithinGrid("edge");
                         }
-                        lcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.showCurrentPosition(currentPosition);
                         break;
                     case "S":
                         if (isWithinGrid((currentPosition[1] - 1)))
@@ -104,7 +104,7 @@ namespace apertureLabsRoboticArm
                         {
                             lcdScreen.inputWithinGrid("edge");
                         }
-                        lcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.showCurrentPosition(currentPosition);
                         break;
                     case "E":
                         if (isWithinGrid((currentPosition[0] + 1)))
@@ -115,7 +115,7 @@ namespace apertureLabsRoboticArm
                         {
                             lcdScreen.inputWithinGrid("edge");
                         }
-                        lcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.showCurrentPosition(currentPosition);
                         break;
                     case "W":
                         if (isWithinGrid((currentPosition[0] - 1)))
@@ -126,7 +126,7 @@ namespace apertureLabsRoboticArm
                         {
                             lcdScreen.inputWithinGrid("edge");
                         }
-                        lcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.showCurrentPosition(currentPosition);
                         break;
                     default:
                         Console.WriteLine("Please choose the letters N, S, E or W");
@@ -136,7 +136,7 @@ namespace apertureLabsRoboticArm
             }
             else
             {
-                lcdScreen.PlateIsntReady();
+                lcdScreen.plateIsntReady();
             }
         }
 
@@ -145,21 +145,21 @@ namespace apertureLabsRoboticArm
             // Checks if the testTubePlate is ready for operation
             if (isPlateReady())
             {
-                lcdScreen.ShowCurrentPosition(currentPosition);
+                lcdScreen.showCurrentPosition(currentPosition);
 
                 // checks the status of the test tube in the current position 
                 if (testTubePlate.grid[posY][posX] == 0)
                 {
-                    lcdScreen.ShowTestTubeFullStatus(0);
+                    lcdScreen.showTestTubeFullStatus(0);
                 }
                 else
                 {
-                    lcdScreen.ShowTestTubeFullStatus(1);
+                    lcdScreen.showTestTubeFullStatus(1);
                 }
             }
             else
             {
-                lcdScreen.PlateIsntReady();
+                lcdScreen.plateIsntReady();
             }
 
         }

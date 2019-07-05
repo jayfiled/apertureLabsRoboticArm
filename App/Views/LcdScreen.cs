@@ -4,18 +4,16 @@ namespace apertureLabsRoboticArm
 {
     class LcdScreen
     {
+        // Interaction for the place menu action.
         public int getPlacement(string axis)
         {
-            // Get inputs, convert to integer and push to array
-            // while loops to stop and provide feedback if the input is outside the 
-            // test tube plate's boundaries.
-
             Console.WriteLine("Which position from 0 - 4 on the {0}-axis would you like to start?", axis);
             int position = System.Convert.ToInt32(Console.ReadLine());
             return position;
         }
 
-        public void PlateIsntReady()
+        // Feedback if you don't run the place menu action first.
+        public void plateIsntReady()
         {
             String notReady = "The test tube plate isn't ready yet, please use the place command to set it up before proceeding further.";
             Console.WriteLine(notReady);
@@ -23,19 +21,7 @@ namespace apertureLabsRoboticArm
             Console.WriteLine("--------------------------------------");
         }
 
-        // Needs error handling for non-ints.
-        public bool PlacePostitionWithinPlateBoundary(int positionXorY)
-        {
-            if (positionXorY >= 0 && positionXorY <= 4)
-            {
-                return inputWithinGrid("ok");
-            }
-            else
-            {
-                return inputWithinGrid("bothOutside");
-            }
-        }
-        public void ShowCurrentPosition(int[] currentPosition)
+        public void showCurrentPosition(int[] currentPosition)
         {
             Console.WriteLine("You are now at position X: {0}, Y: {1}", currentPosition[0], currentPosition[1]);
             Console.WriteLine("--------------------------------------");
@@ -43,7 +29,7 @@ namespace apertureLabsRoboticArm
 
         }
 
-        public void ShowTestTubeFullStatus(int input)
+        public void showTestTubeFullStatus(int input)
         {
             if (input == 1)
             {
@@ -63,6 +49,8 @@ namespace apertureLabsRoboticArm
             }
         }
 
+        // A method to handle the different types of errors when input is given that is outside
+        // the test tube grid area for the PLACE and MOVE actions in the RobotArm class.
         public bool inputWithinGrid(string status)
         {
             switch (status)
@@ -86,14 +74,6 @@ namespace apertureLabsRoboticArm
                     between 0 and 4.
                     ");
                     return false;
-                case "bothOutside":
-                    Console.WriteLine(
-                    @"I'm sorry, neither the X or the Y axis inputs aren't within the boundaries
-                        of the test tube grid - please choose a number
-                        between 0 and 4.
-                        "
-                    );
-                    return false;
                 case "ok":
                     Console.WriteLine(@"Nice, thanks.
                                     ");
@@ -111,7 +91,7 @@ namespace apertureLabsRoboticArm
             Console.WriteLine(@"
                                 Press 'N' to move North (up), 'S' to move South (down),
                                 'E' to move East (right) and 'W' for West (left)
-                                ");         
+                                ");
             return Console.ReadLine().ToUpper();
         }
 
