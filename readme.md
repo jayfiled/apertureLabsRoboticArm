@@ -2,10 +2,15 @@
 
 ### Table of Contents
 ℹ **[Setup Instructions](#setup-instructions)**
+
 📚 **[Robotic Arm Usage Manual](#robotic-arm-usage-manual)**
+
 ✅ **[Project to-do](#project-to-do)**
+
 🤔 **[Project Planning](#project-planning)**
+
 🖼 **[Design Considerations](#design-considerations)**
+
 💪 **[Challenges](#challenges)**
 
 ## ℹ Setup instructions
