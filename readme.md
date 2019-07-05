@@ -58,22 +58,22 @@
     - [ ] ~~**TDD**~~ 👇
         - [x] **LcdDisplay**
 - [ ] **Clean-up**
-    - [ ] **Go over the [style guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions) and fix styling issues**
-    - [ ] **Rename and set the type of variables to 'var' where type is explicit**
-    - [ ] **Rename methods to conventional names**
+    - [x] **Go over the [style guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions) and fix styling issues**
+    - [x] **Rename and set the type of variables to 'var' where type is explicit**
+    - [x] **Rename methods to conventional names**
     - [x] **Change switch statement in router to use Ints**
-    - [ ] **Fix indentation issues when pushed to github**
-    - [ ] **Tidy up comments to convention**
-    - [ ] **Move check for plate ready and grid in own function**
+    - [x] **Fix indentation issues when pushed to github**
+    - [x] **Tidy up comments to convention**
+    - [x] **Move check for plate ready and grid in own function**
     - [ ] **Rename test functions to convention**
     - [ ] **Clean up if else with ternary operators, or C# equivalent**
     - [ ] **Check to see if C# has implied 'else'**
     - [ ] **Add the control flow logic in the MOVE method to a separate function**
-    - [ ] **lcdScreen shouldn't have a check for the grid boundaries.  This method already exists in the RobotArm - too much control for the view - refactor to use robot arm**
+    - [x] **lcdScreen shouldn't have a check for the grid boundaries.  This method already exists in the RobotArm - too much control for the view - refactor to use robot arm**
 - [ ] **Improvement**
     - [ ] **IsWithinGrid function dynamically checks the grid size allowing for different sized plates to hold more or less test tubes**
     - [ ] **The test tubes can be filled randomly**
-    - [ ] **Add a do/while loop to the move method so that the user can quickly navigate around the test tube plate**
+    - [ ] **Add a do/while loop to the move method. So that the user can quickly navigate around the test tube plate without having to go back to the menu**
    
     
 ### Project planning 🤔
@@ -115,23 +115,25 @@ Reports any output or errors to the person controlling the robot.
 
 
 ### Design Considerations
-- VS vs Visual Studio code. Felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
-- "MVC" vs a mini class library - went with "MVC" but felt forced.
-- While the tests were a great way of planning out my project, I was spending too much time with with very limited time allocated to this project while on holidays overseas.
+- VS vs Visual Studio code. I felt like VS was overkill for something this simple.  Not sure how tests would work with VScode as there is a suite built into VS.
+- "MVC" vs a mini class library - went with "MVC" but felt forced as I only had static data in the TestTube class.
+- Used an ugly switch statement in the view for the N, S, E, W movement action.  I don't like the look of them as they take up too much space and seem a little repetitive, and I wanted to move the logic out of each case, but ended up leaving it because I wanted to submit the challenge today. 
+- While the tests were a great way of planning out my project, I was spending too much time with with very limited time allocated to this project while travelling overseas.
 
 ### Challenges:
 - Mapping my knowledge of Ruby to C#
-    Mosh Hamedani on Udemy, traversy media and angelSix on youtube helped out here.
+    ✅ Needed to research everything. Mosh Hamedani on Udemy, traversy media and angelSix on youtube helped out here.
 - Not much exp with testing, let alone in C#.
-    Always wanted to make time for TDD as it allows me to understand what I am actually doing better.
-- Setting up .net workspace on windows. Not challenging, just time consuming looking up how things are done in C# and setting up a workflow.
+    ✅Looked up some videos online.  There isn't much in terms of using it with VScode. But even though I was limited on time, I always wanted to spend time making myself a TDD-developer as it allows me to understand what I am actually doing better.
+- Setting up a .net workspace on windows. Not challenging, just time consuming looking up how things are done in C# and setting up a workflow.
     - NuGet package manager
     - Getting more descriptive test results
-- Struggled to think about which Class should hold the method to check the boundaries of the test tube plate. As it's the view that is getting the place position from the user, I'd have to make new instance of the robot arm to use that function. A static method on the robot arm would probably be ideal, but I have no internet and I get a error message that the function is inaccessible.
 - Syntax frustrations:
-    - "methods" / "functions" are being used interchangeably in all the videos / articles I've read. Not sure which to use.
+    - "methods" / "functions" are being used interchangeably in all the videos / articles I've read. Not sure which to use. 
     - Don't know the concrete naming conventions for Method Names, Variables, instance variables etc.
+    - ✅Overcame it by looking up the (style guide)[https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions]👍👍
 - Spend a bit of time looking into getting better nUnit outputs, like rSpec in Ruby how each test failure has an 'expected' and 'got instead' errors.
 - Testing is challenging because I don't have a 100% confidence that the test I write will be testing the right thing.  My pseudo code often needs refactoring because of logic errors, so TDD will take some getting used to.
-- Found LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck. 
+- Found out about LINQpad as a scratch pad for checking C# syntax etc, but missed out on a debugger like byebug.  In retrospect, the debugger in VScode would have probably done the trick if I got too stuck. 
 - Not 100% sure if I am testing the right things because of the above issues.
+- Now I've scratched around in C# I am looking forward to all the 'ah-ha!' moments i'll get while doing an online course.
