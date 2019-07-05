@@ -19,7 +19,7 @@ namespace apertureLabsRoboticArm
         public void RobotArmObjectShouldInstantiateTheView()
         {
             // Assert
-            Assert.IsNotNull(r.LcdScreen);
+            Assert.IsNotNull(r.lcdScreen);
         }
 
         [TestCase()]
@@ -32,13 +32,13 @@ namespace apertureLabsRoboticArm
             // Run other functions before 'place' and should receive feedback.
             r.Detect(1, 0);
             actualResults[0] = r.IsPlateIsReady();
-            r.plate.readyForOperation = true;
+            r.testTubePlate.readyForOperation = true;
             actualResults[1] = r.IsPlateIsReady();
 
             Assert.AreEqual(expectedResults, actualResults);
 
             //revert changes
-            r.plate.readyForOperation = false;
+            r.testTubePlate.readyForOperation = false;
 
         }
 

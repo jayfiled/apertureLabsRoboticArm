@@ -9,75 +9,75 @@ namespace apertureLabsRoboticArm
 
 
         // Instantiate the testTubePlate
-        public TestTubePlate plate = new TestTubePlate();
+        public TestTubePlate testTubePlate = new TestTubePlate();
 
 
         // Instantiate the view
-        public LcdScreen LcdScreen = new LcdScreen();
+        public LcdScreen lcdScreen = new LcdScreen();
 
 
         // Each method will ask the view for input if necessary
 
         public void Place()
         {
-            // Sets the plate object's 'readyForOperation' instance variable to true
-            plate.readyForOperation = true;
+            // Sets the testTubePlate object's 'readyForOperation' instance variable to true
+            testTubePlate.readyForOperation = true;
             // Checks the boundaries
 
             // Get input from User about where to place the robot arm and save it to the
             // robot arm's current position
-            int[] moveTo = LcdScreen.Place();
+            int[] moveTo = lcdScreen.Place();
             currentPosition[0] = moveTo[0];
             currentPosition[1] = moveTo[1];
 
-            LcdScreen.ShowCurrentPosition(currentPosition);
+            lcdScreen.ShowCurrentPosition(currentPosition);
         }
 
         public void Detect(int posX, int posY)
         {
-            // Checks if the plate is ready for operation
+            // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())
             {
-                if (plate.grid[posY][posX] == 1)
+                if (testTubePlate.grid[posY][posX] == 1)
                 {
-                    LcdScreen.ShowTestTubeFullStatus(1);
+                    lcdScreen.ShowTestTubeFullStatus(1);
                 }
                 else
                 {
-                    LcdScreen.ShowTestTubeFullStatus(0);
+                    lcdScreen.ShowTestTubeFullStatus(0);
                 }
                 // Check y first, then check the X'th element of it
                 // if it's a 1 then it's full, if not it's empty.
             }
             else
             {
-                LcdScreen.PlateIsntReady();
+                lcdScreen.PlateIsntReady();
             }
         }
 
         public void Drop(int posX, int posY)
         {
-            // Checks if the plate is ready for operation
+            // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())
             {
-                if (plate.grid[posY][posX] == 0)
+                if (testTubePlate.grid[posY][posX] == 0)
                 {
-                    plate.grid[posY][posX] = 1;
+                    testTubePlate.grid[posY][posX] = 1;
                 }
                 else
                 {
-                    LcdScreen.ShowTestTubeFullStatus(1);
+                    lcdScreen.ShowTestTubeFullStatus(1);
                 }
             }
             else
             {
-                LcdScreen.PlateIsntReady();
+                lcdScreen.PlateIsntReady();
             }
         }
 
         public void Move()
         {
-            // Checks if the plate is ready for operation
+            // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())
             {
                 Console.WriteLine("Which directions would you like to move in?");
@@ -94,7 +94,7 @@ namespace apertureLabsRoboticArm
                         {
                             Console.WriteLine("You are at the edge already, please use S, E or W");
                         }
-                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     case "S":
                         if (IsWithinGrid((currentPosition[1] - 1)))
@@ -105,7 +105,7 @@ namespace apertureLabsRoboticArm
                         {
                             Console.WriteLine("You are at the edge already, please use N, E or W");
                         }
-                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     case "E":
                         if (IsWithinGrid((currentPosition[0] + 1)))
@@ -116,7 +116,7 @@ namespace apertureLabsRoboticArm
                         {
                             Console.WriteLine("You are at the edge already, please use N, S or W");
                         }
-                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     case "W":
                         if (IsWithinGrid((currentPosition[0] - 1)))
@@ -127,7 +127,7 @@ namespace apertureLabsRoboticArm
                         {
                             Console.WriteLine("You are at the edge already, please use N, S or E");
                         }
-                        LcdScreen.ShowCurrentPosition(currentPosition);
+                        lcdScreen.ShowCurrentPosition(currentPosition);
                         break;
                     default:
                         Console.WriteLine("Please choose the letters N, S, E or W");
@@ -137,30 +137,30 @@ namespace apertureLabsRoboticArm
             }
             else
             {
-                LcdScreen.PlateIsntReady();
+                lcdScreen.PlateIsntReady();
             }
         }
 
         public void Report(int posX, int posY)
         {
-            // Checks if the plate is ready for operation
+            // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())
             {
-                LcdScreen.ShowCurrentPosition(currentPosition);
+                lcdScreen.ShowCurrentPosition(currentPosition);
 
                 // checks the status of the test tube in the current position 
-                if (plate.grid[posY][posX] == 0)
+                if (testTubePlate.grid[posY][posX] == 0)
                 {
-                    LcdScreen.ShowTestTubeFullStatus(0);
+                    lcdScreen.ShowTestTubeFullStatus(0);
                 }
                 else
                 {
-                    LcdScreen.ShowTestTubeFullStatus(1);
+                    lcdScreen.ShowTestTubeFullStatus(1);
                 }
             }
             else
             {
-                LcdScreen.PlateIsntReady();
+                lcdScreen.PlateIsntReady();
             }
 
         }
@@ -169,7 +169,7 @@ namespace apertureLabsRoboticArm
 
         public bool IsPlateIsReady()
         {
-            if (plate.readyForOperation == true)
+            if (testTubePlate.readyForOperation == true)
             {
                 return true;
             }
