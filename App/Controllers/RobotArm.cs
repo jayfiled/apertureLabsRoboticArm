@@ -28,7 +28,7 @@ namespace apertureLabsRoboticArm
             }
             catch
             {
-                lcdScreen.error();
+                LcdScreen.error();
             }
 
             lcdScreen.ShowCurrentPosition(currentPosition);

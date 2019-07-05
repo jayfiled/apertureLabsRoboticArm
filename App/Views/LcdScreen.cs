@@ -105,7 +105,7 @@ namespace apertureLabsRoboticArm
 
         }
 
-        public void error()
+        public static void error()
         {
             Console.WriteLine(@"
                                 Error! You are only able to enter numbers! 

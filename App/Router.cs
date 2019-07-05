@@ -7,17 +7,26 @@ namespace apertureLabsRoboticArm
         // Set instance variables.
         public bool running = true;
         RobotArm robotArm = new RobotArm();
+        // A loop to display the program's menu after every completed action path. 
         public void run()
         {
-            Console.WriteLine(PrintWelcomeMessage());
+            Console.WriteLine(printWelcomeMessage());
+
             while (running == true)
             {
                 displayMenu();
                 // Get the action the user wants to perform and run it over a switch statement. 
-                int menuChoice = System.Convert.ToInt32(Console.ReadLine());
-                RouteAction(menuChoice);
+                try
+                {
+                    int menuChoice = System.Convert.ToInt32(Console.ReadLine());
+                    routeAction(menuChoice);
+                }
+                catch
+                {
+                    LcdScreen.error();
+                }
             }
-            Console.WriteLine(PrintFarewellMessage());
+            Console.WriteLine(printFarewellMessage());
         }
 
         String[] actions = {
@@ -29,7 +38,7 @@ namespace apertureLabsRoboticArm
             "EXIT operation of Robotic Arm"
         };
 
-        private void RouteAction(int menuChoice)
+        private void routeAction(int menuChoice)
         {
             switch (menuChoice)
             {
@@ -73,7 +82,7 @@ namespace apertureLabsRoboticArm
             running = false;
         }
 
-        private String PrintWelcomeMessage()
+        private String printWelcomeMessage()
         {
             return (
                     @"
@@ -85,7 +94,7 @@ namespace apertureLabsRoboticArm
             );
         }
 
-        private String PrintFarewellMessage()
+        private String printFarewellMessage()
         {
             return (
                     @"
