@@ -33,7 +33,7 @@ namespace apertureLabsRoboticArm
             lcdScreen.ShowCurrentPosition(currentPosition);
         }
 
-        public void Detect(int posX, int posY)
+        public void detect(int posX, int posY)
         {
             // Checks if the testTubePlate is ready for operation
             if (IsPlateIsReady())

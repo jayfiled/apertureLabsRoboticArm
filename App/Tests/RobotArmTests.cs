@@ -30,7 +30,7 @@ namespace apertureLabsRoboticArm
             bool[] actualResults = new bool[2];
 
             // Run other functions before 'place' and should receive feedback.
-            r.Detect(1, 0);
+            r.detect(1, 0);
             actualResults[0] = r.IsPlateIsReady();
             r.testTubePlate.readyForOperation = true;
             actualResults[1] = r.IsPlateIsReady();
