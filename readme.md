@@ -13,7 +13,7 @@
 
 - **[Challenges](#challenges)**
 
-## ℹ Setup instructions
+## Setup instructions ℹ
 1. Make sure dotnet 👇
 
 - For [Windows](https://dotnet.microsoft.com/download/dotnet-core/2.2), [Linux](https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-2.2.300) or [MacOSX](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-macos-x64-installer)
