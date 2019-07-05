@@ -34,7 +34,7 @@ namespace apertureLabsRoboticArm
             switch (menuChoice)
             {
                 case 1:
-                    robotArm.Place();
+                    robotArm.place();
                     break;
                 case 2:
                     robotArm.Detect(robotArm.currentPosition[0], robotArm.currentPosition[1]);

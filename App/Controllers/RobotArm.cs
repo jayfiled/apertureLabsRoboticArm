@@ -18,7 +18,7 @@ namespace apertureLabsRoboticArm
 
         // Each method will ask the view for input if necessary
 
-        public void Place()
+        public void place()
         {
             // Sets the testTubePlate object's 'readyForOperation' instance variable to true
             testTubePlate.readyForOperation = true;

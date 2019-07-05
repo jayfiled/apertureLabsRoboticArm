@@ -4,7 +4,7 @@ namespace apertureLabsRoboticArm
 {
     class TestTubePlate
     {
-        // Will only be set to true after the Place method in RobotArm.
+        // Will only be set to true after the place method in RobotArm.
         public bool readyForOperation = false;
 
         public int[][] grid =
