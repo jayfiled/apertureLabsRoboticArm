@@ -1,7 +1,7 @@
 ## Write software to automate the pipetting process in an aperture laboratory
 
 ### Table of Contents
-- **[Intro](#ℹ-setup-instructions)**
+- **[Intro](#-intro)**
 
 - **[Setup Instructions](#ℹ-setup-instructions)**
 
