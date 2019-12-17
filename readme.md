@@ -37,7 +37,7 @@
 - Make sure you have the most recent version of NuGet (included in Visual Studio, so no need to install if you have this), otherwise, install from [here](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe)
 - Then from powershell or cmd run `dotnet test -v:n` wait for the logging output then scroll to the bottom for the test results.
 
-### 📚 Robotic Arm Usage Manual
+### 📚 Robotic Arm Usage Manual (and exercise requirements)
 - The application is a simulation of a laboratory pipetting robot arm moving above a square plate of 25 wells, of dimensions 5 units x 5 units.
 - The robot can freely move above the surface of the plate, and has been primed with enough solution to pipette.
 
