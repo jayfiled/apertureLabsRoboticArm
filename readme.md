@@ -1,9 +1,11 @@
 ## Write software to automate the pipetting process in an aperture laboratory
 
 ### Table of Contents
+- **[Intro](#ℹ-setup-instructions)**
+
 - **[Setup Instructions](#ℹ-setup-instructions)**
 
-- **[Robotic Arm Usage Manual](#-robotic-arm-usage-manual)**
+- **[Robotic Arm Usage Manual (and exercise requirements)](#-robotic-arm-usage-manual)**
 
 - **[Project to-do](#-project-to-do)**
 
@@ -13,12 +15,15 @@
 
 - **[Challenges](#-challenges)**
 
+## Intro
+This is an object-oriented coding exercise I completed to help map my Ruby knowledge to .Net C#.  It is a console app that simulates a laboritory robot arm that can sense if a test tube is full or empty and can fill them with pipetting liquid based on input from the user.
+
 ## ℹ Setup instructions
-1. Make sure dotnet 👇
+1. Make sure the followin is installed -  dotnet 👇
 
 - For [Windows](https://dotnet.microsoft.com/download/dotnet-core/2.2), [Linux](https://dotnet.microsoft.com/download/linux-package-manager/rhel/sdk-2.2.300) or [MacOSX](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-macos-x64-installer)
 
-.. and git ([for Windows](https://git-scm.com/download/win)) or [Linux/OSX](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed
+.. and git 👉 ([for Windows](https://git-scm.com/download/win)) or [Linux/OSX](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 2. Open up git bash, cmd or powershell then follow these steps to clone the source from GitHub to a folder on your computer.
 
